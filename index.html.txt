@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Logic & Gate – Tanzanite Mining</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f7fb;
+      color: #1a2a3a;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* Header / Nav */
+    header {
+      background: #0b2b33;
+      color: white;
+      padding: 20px 0;
+      border-bottom: 4px solid #00e5ff;
+    }
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .logo h1 {
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+    .logo p {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      border-bottom-color: #00e5ff;
+      color: #00e5ff;
+    }
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #0e2f3a 0%, #094451 100%);
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 24px;
+      opacity: 0.9;
+    }
+    .btn {
+      display: inline-block;
+      background: #00e5ff;
+      color: #0b2b33;
+      padding: 12px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+      margin: 8px;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #00e5ff;
+      color: #00e5ff;
+    }
+    .btn:hover {
+      background: #00b8d4;
+      transform: scale(1.02);
+    }
+    /* Features */
+    .features {
+      padding: 60px 0;
+      background: white;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #0b2b33;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+    }
+    .card {
+      background: #f9fafc;
+      border-radius: 24px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: 0.2s;
+      border-top: 4px solid #00e5ff;
+    }
+    .card h3 {
+      font-size: 1.5rem;
+      margin: 16px 0 12px;
+      color: #0b2b33;
+    }
+    .card p {
+      color: #3a5468;
+    }
+    /* Footer */
+    footer {
+      background: #0b2b33;
+      color: #b0d4e0;
+      text-align: center;
+      padding: 32px 0;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #00e5ff;
+      text-decoration: none;
+    }
+    @media (max-width: 700px) {
+      .header-flex {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-flex">
+      <div class="logo">
+        <h1>Logic & Gate</h1>
+        <p>innovate · simulate · earn</p>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="support.html">Support</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>⚒️ Tanzanite Mining</h2>
+      <p>Mine virtual gems, play mini games, invite friends, and convert your <strong>Tan</strong> coins to real Solana wallet!</p>
+      <a href="#" class="btn" style="pointer-events: none;">📱 Coming soon on Google Play</a>
+      <a href="support.html" class="btn btn-outline">💬 Get Support</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Game Features</h2>
+      <div class="grid">
+        <div class="card">💎 <h3>Virtual Mining</h3><p>Tap to mine Tanzanite gems and earn <strong>Tan</strong> coins. Upgrade your pickaxe for bigger rewards.</p></div>
+        <div class="card">🎮 <h3>Mini Games</h3><p>Play puzzle, memory, and reflex games to boost your Tan earnings daily.</p></div>
+        <div class="card">👥 <h3>Referral Program</h3><p>Invite friends and get 10% of their mining rewards. Unlimited levels!</p></div>
+        <div class="card">📅 <h3>Daily Rewards</h3><p>Login every day for bonus Tan, streak multipliers, and rare boosters.</p></div>
+        <div class="card">🪙 <h3>Tan → Solana</h3><p>Withdraw your earned Tan directly to any Solana wallet (minimum 100 Tan).</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Logic & Gate. All virtual assets are in‑game only. Solana withdrawals are processed securely.</p>
+      <p><a href="privacy.html">Privacy Policy</a> | <a href="support.html">Contact Us</a></p>
+    </div>
+  </footer>
+</body>
+</html>
