@@ -16,17 +16,21 @@
       background: #f5f7fb;
       color: #1a2a3a;
       line-height: 1.5;
+      overflow-x: hidden; /* Prevent horizontal scroll on page */
     }
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 24px;
+      width: 100%;
     }
     header {
       background: #0b2b33;
       color: white;
       padding: 20px 0;
       border-bottom: 4px solid #00e5ff;
+      width: 100%;
+      overflow-x: hidden;
     }
     .header-flex {
       display: flex;
@@ -34,6 +38,7 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 16px;
+      width: 100%;
     }
     .logo h1 {
       font-size: 1.8rem;
@@ -62,7 +67,7 @@
       border-bottom-color: #00e5ff;
       color: #00e5ff;
     }
-    /* Mobile: horizontal scroll menu */
+    /* Mobile: horizontal scroll menu ONLY on nav-links, body stays stable */
     @media (max-width: 768px) {
       .header-flex {
         flex-direction: column;
@@ -78,6 +83,8 @@
         padding-bottom: 8px;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: thin;
+        /* Ensure nav-links doesn't cause body overflow */
+        max-width: 100%;
       }
       .nav-links a {
         flex-shrink: 0;
@@ -93,6 +100,10 @@
       .nav-links::-webkit-scrollbar-thumb {
         background: #00e5ff;
         border-radius: 10px;
+      }
+      /* Fix container padding on mobile */
+      .container {
+        padding: 0 16px;
       }
     }
     .hero {
