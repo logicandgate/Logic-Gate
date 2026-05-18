@@ -43,6 +43,7 @@
       font-size: 0.9rem;
       opacity: 0.8;
     }
+    /* Navigation - Desktop normal, Mobile horizontal scroll */
     .nav-links {
       display: flex;
       gap: 28px;
@@ -55,10 +56,44 @@
       transition: 0.2s;
       padding: 6px 0;
       border-bottom: 2px solid transparent;
+      white-space: nowrap;
     }
     .nav-links a:hover, .nav-links a.active {
       border-bottom-color: #00e5ff;
       color: #00e5ff;
+    }
+    /* Mobile: horizontal scroll menu */
+    @media (max-width: 768px) {
+      .header-flex {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .logo {
+        text-align: center;
+      }
+      .nav-links {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 24px;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+      }
+      .nav-links a {
+        flex-shrink: 0;
+      }
+      /* Optional: custom scrollbar style (works on WebKit) */
+      .nav-links::-webkit-scrollbar {
+        height: 4px;
+      }
+      .nav-links::-webkit-scrollbar-track {
+        background: #1e4a5a;
+        border-radius: 10px;
+      }
+      .nav-links::-webkit-scrollbar-thumb {
+        background: #00e5ff;
+        border-radius: 10px;
+      }
     }
     .hero {
       background: linear-gradient(135deg, #0e2f3a 0%, #094451 100%);
@@ -140,10 +175,6 @@
       text-decoration: none;
     }
     @media (max-width: 700px) {
-      .header-flex {
-        flex-direction: column;
-        text-align: center;
-      }
       .hero h2 {
         font-size: 1.8rem;
       }
