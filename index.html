@@ -4,245 +4,144 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="google-site-verification" content="DAcbI2HrYKFaGq9K4h2BNnw3FyqWTo9AsLIa5IV_dEE">
-  <title>Logic & Gate Official Website</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      background: #f5f7fb;
-      color: #1a2a3a;
-      line-height: 1.5;
-      overflow-x: hidden; /* Prevent horizontal scroll on page */
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-      width: 100%;
-    }
-    header {
-      background: #0b2b33;
-      color: white;
-      padding: 20px 0;
-      border-bottom: 4px solid #00e5ff;
-      width: 100%;
-      overflow-x: hidden;
-    }
-    .header-flex {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-      width: 100%;
-    }
-    .logo h1 {
-      font-size: 1.8rem;
-      letter-spacing: 1px;
-    }
-    .logo p {
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-    /* Navigation - Desktop normal, Mobile horizontal scroll */
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      flex-wrap: wrap;
-    }
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.2s;
-      padding: 6px 0;
-      border-bottom: 2px solid transparent;
-      white-space: nowrap;
-    }
-    .nav-links a:hover, .nav-links a.active {
-      border-bottom-color: #00e5ff;
-      color: #00e5ff;
-    }
-    /* Mobile: horizontal scroll menu ONLY on nav-links, body stays stable */
-    @media (max-width: 768px) {
-      .header-flex {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .logo {
-        text-align: center;
-      }
-      .nav-links {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        gap: 24px;
-        padding-bottom: 8px;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
-        /* Ensure nav-links doesn't cause body overflow */
-        max-width: 100%;
-      }
-      .nav-links a {
-        flex-shrink: 0;
-      }
-      /* Optional: custom scrollbar style (works on WebKit) */
-      .nav-links::-webkit-scrollbar {
-        height: 4px;
-      }
-      .nav-links::-webkit-scrollbar-track {
-        background: #1e4a5a;
-        border-radius: 10px;
-      }
-      .nav-links::-webkit-scrollbar-thumb {
-        background: #00e5ff;
-        border-radius: 10px;
-      }
-      /* Fix container padding on mobile */
-      .container {
-        padding: 0 16px;
-      }
-    }
-    .hero {
-      background: linear-gradient(135deg, #0e2f3a 0%, #094451 100%);
-      color: white;
-      padding: 60px 0;
-      text-align: center;
-    }
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 16px;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto 24px;
-      opacity: 0.9;
-    }
-    .btn {
-      display: inline-block;
-      background: #00e5ff;
-      color: #0b2b33;
-      padding: 12px 28px;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.2s;
-      margin: 8px;
-    }
-    .btn-outline {
-      background: transparent;
-      border: 2px solid #00e5ff;
-      color: #00e5ff;
-    }
-    .btn:hover {
-      background: #00b8d4;
-      transform: scale(1.02);
-    }
-    .features {
-      padding: 60px 0;
-      background: white;
-    }
-    .section-title {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 40px;
-      color: #0b2b33;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 32px;
-    }
-    .card {
-      background: #f9fafc;
-      border-radius: 24px;
-      padding: 24px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: 0.2s;
-      border-top: 4px solid #00e5ff;
-    }
-    .card h3 {
-      font-size: 1.5rem;
-      margin: 16px 0 12px;
-      color: #0b2b33;
-    }
-    .card p {
-      color: #3a5468;
-    }
-    footer {
-      background: #0b2b33;
-      color: #b0d4e0;
-      text-align: center;
-      padding: 32px 0;
-      margin-top: 40px;
-    }
-    footer a {
-      color: #00e5ff;
-      text-decoration: none;
-    }
-    @media (max-width: 700px) {
-      .hero h2 {
-        font-size: 1.8rem;
-      }
-    }
-  </style>
+  <meta name="description" content="Logic & Gate builds Tanzanite Mining — mine virtual gems, play mini games, invite friends, and convert Tan to real Solana.">
+  <title>Logic & Gate — Tanzanite Mining</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,8 92,38 76,92 24,92 8,38' fill='%2300e5ff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
+  <div class="bg-mesh" aria-hidden="true"></div>
+  <div class="bg-grain" aria-hidden="true"></div>
+
+  <header class="site-header">
     <div class="container header-flex">
-      <div class="logo">
-        <h1>Logic & Gate</h1>
-        <p>innovate · simulate · earn</p>
-      </div>
-      <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
+      <a href="index.html" class="logo">
+        <span class="gem-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 120" width="30" height="36">
+            <polygon class="f1" points="50,5 95,40 50,40"/>
+            <polygon class="f2" points="50,5 50,40 5,40"/>
+            <polygon class="f3" points="5,40 20,100 50,40"/>
+            <polygon class="f4" points="50,40 20,100 50,115"/>
+            <polygon class="f5" points="50,40 50,115 80,100"/>
+            <polygon class="f6" points="50,40 80,100 95,40"/>
+            <polyline class="edge" points="50,5 95,40 80,100 50,115 20,100 5,40 50,5"/>
+            <polyline class="edge" points="50,5 50,115"/>
+            <polyline class="edge" points="5,40 95,40"/>
+            <polyline class="edge" points="20,100 50,40 80,100"/>
+          </svg>
+        </span>
+        <span class="logo-text">
+          <h1>Logic & Gate</h1>
+          <p>innovate · simulate · earn</p>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
         <a href="privacy.html">App Privacy</a>
         <a href="site-privacy.html">Website Privacy</a>
         <a href="support.html">Support</a>
         <a href="license.html">License</a>
         <a href="company-profile.html">Company Profile</a>
-      </div>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
     </div>
   </header>
+  <div class="scroll-progress" aria-hidden="true"></div>
 
   <section class="hero">
-    <div class="container">
-      <h2>⚒️ Tanzanite Mining</h2>
-      <p>Mine virtual gems, play mini games, invite friends, and convert your <strong>Tan</strong> coins to real Solana wallet!</p>
-      <a href="#" class="btn" style="pointer-events: none;">📱 Coming soon on Google Play</a>
-      <a href="support.html" class="btn btn-outline">💬 Get Support</a>
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow load-in d1">PLAY-TO-EARN · ANDROID</p>
+        <h2 class="load-in d2">Mine <span class="accent">Tanzanite</span>.<br>Earn real Solana.</h2>
+        <p class="lede load-in d3">Tap to mine virtual gems, play mini games, build a streak, and invite friends — every bit of Tan you collect converts straight to a Solana wallet.</p>
+        <div class="hero-cta load-in d4">
+          <a href="#" class="btn" aria-disabled="true">📱 Coming soon on Google Play</a>
+          <a href="support.html" class="btn btn-outline">💬 Get Support</a>
+        </div>
+      </div>
+      <div class="hero-gem-stage load-in d2">
+        <span class="gem-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 120">
+            <polygon class="f1" points="50,5 95,40 50,40"/>
+            <polygon class="f2" points="50,5 50,40 5,40"/>
+            <polygon class="f3" points="5,40 20,100 50,40"/>
+            <polygon class="f4" points="50,40 20,100 50,115"/>
+            <polygon class="f5" points="50,40 50,115 80,100"/>
+            <polygon class="f6" points="50,40 80,100 95,40"/>
+            <polyline class="edge" points="50,5 95,40 80,100 50,115 20,100 5,40 50,5"/>
+            <polyline class="edge" points="50,5 50,115"/>
+            <polyline class="edge" points="5,40 95,40"/>
+            <polyline class="edge" points="20,100 50,40 80,100"/>
+          </svg>
+        </span>
+      </div>
     </div>
   </section>
+
+  <div class="container"><div class="divider-circuit" aria-hidden="true"></div></div>
 
   <section class="features">
     <div class="container">
       <h2 class="section-title">Game Features</h2>
+      <p class="section-sub">Five systems, one loop: mine, play, invite, return daily, withdraw.</p>
       <div class="grid">
-        <div class="card">💎 <h3>Virtual Mining</h3><p>Tap to mine Tanzanite gems and earn <strong>Tan</strong> coins. Upgrade your pickaxe for more rewards.</p></div>
-        <div class="card">🎮 <h3>Mini Games</h3><p>Play puzzle, memory, and reflex games to boost your Tan earnings daily.</p></div>
-        <div class="card">👥 <h3>Referral Program</h3><p>Invite friends and get 10% of their mining rewards.</p></div>
-        <div class="card">📅 <h3>Daily Rewards</h3><p>Login every day for bonus Tan, streak multipliers, and rare boosters.</p></div>
-        <div class="card">🪙 <h3>Tan → Solana</h3><p>Withdraw your earned Tan directly to any Solana wallet (minimum 1 Tan).</p></div>
+        <div class="card reveal">
+          <span class="icon">💎</span>
+          <h3>Virtual Mining</h3>
+          <p>Tap to mine Tanzanite gems and earn Tan coins. Upgrade your pickaxe for more rewards.</p>
+        </div>
+        <div class="card reveal">
+          <span class="icon">🎮</span>
+          <h3>Mini Games</h3>
+          <p>Play puzzle, memory, and reflex games to boost your Tan earnings daily.</p>
+        </div>
+        <div class="card reveal">
+          <span class="icon">👥</span>
+          <h3>Referral Program</h3>
+          <p>Invite friends and get 10% of their mining rewards.</p>
+        </div>
+        <div class="card reveal">
+          <span class="icon">📅</span>
+          <h3>Daily Rewards</h3>
+          <p>Login every day for bonus Tan, streak multipliers, and rare boosters.</p>
+        </div>
+        <div class="card reveal">
+          <span class="icon">🪙</span>
+          <h3>Tan → Solana</h3>
+          <p>Withdraw your earned Tan directly to any Solana wallet (minimum 1 Tan).</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer>
+  <footer class="site-footer">
     <div class="container">
+      <span class="gem-mark foot-mark" aria-hidden="true" style="width:22px;display:inline-block;">
+        <svg viewBox="0 0 100 120" width="22" height="26">
+          <polygon class="f1" points="50,5 95,40 50,40"/>
+          <polygon class="f2" points="50,5 50,40 5,40"/>
+          <polygon class="f3" points="5,40 20,100 50,40"/>
+          <polygon class="f4" points="50,40 20,100 50,115"/>
+          <polygon class="f5" points="50,40 50,115 80,100"/>
+          <polygon class="f6" points="50,40 80,100 95,40"/>
+        </svg>
+      </span>
       <p>© 2026 Logic & Gate. All rights reserved by Logic & Gate company.</p>
-      <p>
-        <a href="privacy.html">App Privacy</a> |
-        <a href="site-privacy.html">Website Privacy</a> |
-        <a href="support.html">Support</a> |
-        <a href="license.html">License & Legal</a> |
+      <p class="foot-links">
+        <a href="privacy.html">App Privacy</a><span>|</span>
+        <a href="site-privacy.html">Website Privacy</a><span>|</span>
+        <a href="support.html">Support</a><span>|</span>
+        <a href="license.html">License & Legal</a><span>|</span>
         <a href="company-profile.html">Company Profile</a>
       </p>
     </div>
   </footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+  <script src="script.js"></script>
 </body>
 </html>
