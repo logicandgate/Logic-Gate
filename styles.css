@@ -114,12 +114,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible{
   animation: gemHue 9s ease-in-out infinite;
 }
 .gem-mark svg{ display:block; }
-.gem-mark .f1{ fill: rgba(0,229,255,0.85); }
-.gem-mark .f2{ fill: rgba(0,229,255,0.62); }
-.gem-mark .f3{ fill: rgba(0,229,255,0.46); }
-.gem-mark .f4{ fill: rgba(140,111,255,0.40); }
-.gem-mark .f5{ fill: rgba(140,111,255,0.30); }
-.gem-mark .f6{ fill: rgba(140,111,255,0.22); }
+.gem-mark .f1{ fill: rgba(0,229,255,0.90); }
+.gem-mark .f2{ fill: rgba(0,229,255,0.72); }
+.gem-mark .f3{ fill: rgba(0,229,255,0.56); }
+.gem-mark .f4{ fill: rgba(0,229,255,0.42); }
+.gem-mark .f5{ fill: rgba(0,229,255,0.30); }
+.gem-mark .f6{ fill: rgba(0,229,255,0.20); }
 .gem-mark .edge{ stroke: rgba(234,244,247,0.55); stroke-width:1.4; fill:none; }
 
 @keyframes gemHue{
