@@ -124,7 +124,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible{
 
 @keyframes gemHue{
   0%, 100% { filter: hue-rotate(0deg) drop-shadow(0 0 10px rgba(0,229,255,0.35)); }
-  50%      { filter: hue-rotate(150deg) drop-shadow(0 0 14px rgba(209,77,119,0.35)); }
+  50%      { filter: hue-rotate(70deg) drop-shadow(0 0 14px rgba(209,77,119,0.35)); }
 }
 
 /* ==========================================================================
@@ -537,11 +537,12 @@ section{ padding: 18px 0 56px; }
 }
 .signature-area .gem-mark{
   position:absolute;
-  right: -10px; top: -10px;
-  width: 110px;
-  opacity: 0.12;
+  right: 16px; top: 16px;
+  width: 64px;
+  opacity: 0.14;
   animation: none;
   filter:none;
+  pointer-events: none;
 }
 .signature-img{
   max-width: 250px;
