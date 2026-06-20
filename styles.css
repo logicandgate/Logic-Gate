@@ -318,3 +318,95 @@ details[open] summary::after{transform:rotate(45deg)}
   .foot-links span{display:none}
 }
 
+/* ═══════════════════════════════════════════════════════════
+   ADDENDUM: Inner page classes (company-profile, license,
+   site-privacy, support)
+   ═══════════════════════════════════════════════════════════ */
+
+/* Page header subtitle */
+.dek{color:var(--text-dim);font-size:1rem;max-width:640px;margin:1rem auto 0;text-align:center;line-height:1.5}
+.dek.meta{font-family:var(--font-mono);font-size:.78rem;opacity:.75}
+
+/* Panel card (content wrapper) */
+.panel{
+  max-width:800px;margin:0 auto 4rem;padding:2.5rem;
+  background:linear-gradient(145deg,rgba(15,39,49,.9),rgba(11,29,36,.95));
+  border:1px solid var(--border);border-radius:1.25rem;
+}
+@media(max-width:600px){.panel{padding:1.5rem}}
+
+.panel h2{
+  font-family:var(--font-head);font-size:1.25rem;margin:2.5rem 0 1rem;font-weight:700;color:var(--text);
+}
+.panel h2:first-child{margin-top:0}
+.panel p,.panel li{color:var(--text-dim);font-size:.95rem;margin-bottom:.9rem;line-height:1.7}
+.panel ul{padding-left:1.25rem;margin-bottom:1rem}
+.panel li{margin-bottom:.5rem}
+
+/* Spec grids (company profile) */
+.spec-grid{display:grid;gap:.1rem;margin:1.25rem 0}
+.spec-grid > div{
+  display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;padding:.85rem .25rem;
+  border-bottom:1px solid rgba(26,61,77,.35);
+}
+.spec-label{font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-dim);min-width:180px;flex-shrink:0}
+.spec-value{font-size:.92rem;color:var(--text);font-weight:500;line-height:1.5}
+
+/* Note box */
+.note-box{
+  background:rgba(0,229,255,.06);border:1px solid rgba(0,229,255,.2);
+  border-radius:.6rem;padding:1rem 1.25rem;margin:1.5rem 0;font-size:.9rem;color:var(--text-dim);
+}
+
+/* License number */
+.license-number{
+  font-family:var(--font-mono);font-size:1.05rem;font-weight:600;
+  background:rgba(0,0,0,.2);border:1px dashed var(--border);
+  padding:1rem 1.5rem;border-radius:.6rem;display:inline-block;margin:.5rem 0;
+  color:var(--accent);letter-spacing:.02em;
+}
+
+/* Signature block */
+.signature-area{
+  margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;
+}
+.signature-img{max-width:220px;height:auto;margin:.75rem 0;opacity:.9}
+.signature-fallback{display:none;font-size:.85rem;color:var(--text-dim);font-style:italic}
+.sig-meta{font-size:.85rem;color:var(--text-dim);margin-top:1rem;line-height:1.8}
+
+/* Support page contact methods */
+.contact-methods{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin:1.5rem 0 2.5rem}
+.method{
+  background:var(--bg-card);border:1px solid var(--border);border-radius:1rem;padding:1.5rem;text-align:center;
+  transition:border-color .2s,transform .2s;
+}
+.method:hover{border-color:rgba(0,229,255,.25);transform:translateY(-2px)}
+.method .icon{font-size:2.2rem;margin-bottom:.75rem;display:block;line-height:1}
+.method h3{font-family:var(--font-head);font-size:1.1rem;margin-bottom:.5rem}
+.method p{font-size:.88rem;color:var(--text-dim);margin-bottom:.75rem}
+
+/* FAQ (support page uses manual .chev) */
+.faq{margin-top:1.5rem}
+.faq-item{
+  background:var(--bg-card);border:1px solid var(--border);border-radius:.75rem;
+  margin-bottom:.75rem;overflow:hidden;transition:border-color .2s;
+}
+.faq-item[open]{border-color:rgba(0,229,255,.25)}
+.faq-item summary{
+  padding:1.1rem 1.25rem;cursor:pointer;font-weight:600;font-size:.95rem;
+  list-style:none;display:flex;justify-content:space-between;align-items:center;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{display:none} /* hide default + so .chev works */
+.faq-item .chev{
+  font-family:var(--font-mono);font-size:1.2rem;color:var(--accent);transition:transform .25s;flex-shrink:0;margin-left:.5rem;
+}
+.faq-item[open] .chev{transform:rotate(45deg)}
+.faq-body{
+  padding:0 1.25rem 1.25rem;color:var(--text-dim);font-size:.9rem;line-height:1.6;
+}
+.faq-body p{margin-bottom:.5rem}
+
+/* Inline copy buttons */
+p .copy-btn{margin-left:.5rem;vertical-align:middle}
+
