@@ -276,15 +276,24 @@ a:focus-visible, button:focus-visible, summary:focus-visible{
 /* ==========================================================================
    Gem mark
    ========================================================================== */
-.gem-mark svg{ display: block; }
-.gem-mark .f1{ fill: #2bb3d4; }
-.gem-mark .f2{ fill: #1e7fa6; }
-.gem-mark .f3{ fill: #6a52d4; }
-.gem-mark .f4{ fill: #3d2b8a; }
-.gem-mark .f5{ fill: #b94a6f; }
-.gem-mark .f6{ fill: #8c3a78; }
-.gem-mark .edge{ fill: none; stroke: rgba(255,255,255,0.55); stroke-width: 1.5; stroke-linejoin: round; }
-
+.gem-mark{
+  display:inline-block;
+  filter: drop-shadow(0 0 10px rgba(0,229,255,0.35));
+  animation: gemHue 9s ease-in-out infinite;
+}
+.gem-mark svg{ display:block; }
+.gem-mark .f1{ fill: rgba(0,229,255,0.90); }
+.gem-mark .f2{ fill: rgba(0,229,255,0.72); }
+.gem-mark .f3{ fill: rgba(0,229,255,0.56); }
+.gem-mark .f4{ fill: rgba(0,229,255,0.42); }
+.gem-mark .f5{ fill: rgba(0,229,255,0.30); }
+.gem-mark .f6{ fill: rgba(0,229,255,0.20); }
+.gem-mark .edge{ stroke: rgba(234,244,247,0.55); stroke-width:1.4; fill:none; }
+ 
+@keyframes gemHue{
+  0%, 100% { filter: hue-rotate(0deg) drop-shadow(0 0 10px rgba(0,229,255,0.35)); }
+  50%      { filter: hue-rotate(70deg) drop-shadow(0 0 14px rgba(209,77,119,0.35)); }
+}
 /* ==========================================================================
    Hero (index)
    ========================================================================== */
