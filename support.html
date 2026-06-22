@@ -22,18 +22,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  
 </head>
 <body>
   <div class="bg-mesh" aria-hidden="true"></div>
   <div class="bg-grain" aria-hidden="true"></div>
 
   <header class="site-header">
-    <div class="container header-flex">
+    <div class="container">
       <a href="index.html" class="logo" aria-label="Logic & Gate home">
-        
         <span class="gem-mark" aria-hidden="true">
-          <svg viewBox="0 0 100 120" width="30" height="36">
+          <svg viewBox="0 0 100 120" width="28" height="34">
             <polygon class="f1" points="50,5 95,40 50,40"/>
             <polygon class="f2" points="50,5 50,40 5,40"/>
             <polygon class="f3" points="5,40 20,100 50,40"/>
@@ -51,17 +49,9 @@
           <p>innovate · simulate · earn</p>
         </span>
       </a>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="privacy.html">App Privacy</a>
-        <a href="site-privacy.html">Website Privacy</a>
-        <a href="support.html">Support</a>
-        <a href="license.html">License</a>
-        <a href="company-profile.html">Company Profile</a>
-      </nav>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav"><span></span></button>
     </div>
   </header>
+
   <div class="scroll-progress" aria-hidden="true"></div>
   <div class="container">
     <div class="page-header">
@@ -72,70 +62,74 @@
 
     <section class="panel">
       <div class="contact-methods">
-        <div class="method reveal">
-          <div class="icon" aria-hidden="true">📧</div>
-          <h3>Email Support</h3>
-          <p>For account issues, withdrawal inquiries, or bug reports:</p>
-          <p><strong><a href="mailto:support@logicandgate.com">support@logicandgate.com</a></strong>
-          <button class="copy-btn" data-copy="support@logicandgate.com" type="button">copy</button></p>
-          <p style="font-size:.9rem; margin-top:8px;">Please include your in-game username, email address and UID.</p>
+        <div class="method-card">
+          <div class="method-icon" aria-hidden="true">📧</div>
+          <div class="method-content">
+            <h3>Email Support</h3>
+            <p>For account issues, withdrawal inquiries, or bug reports:</p>
+            <p><strong><a href="mailto:support@logicandgate.com">support@logicandgate.com</a></strong>
+            <button class="copy-btn" data-copy="support@logicandgate.com" type="button">copy</button></p>
+            <p class="method-note">Please include your in-game username, email address and UID.</p>
+          </div>
         </div>
-        <div class="method reveal">
-          <div class="icon" aria-hidden="true">🌐</div>
-          <h3>Visit Our Website</h3>
-          <p>All official updates, legal docs and company info live here:</p>
-          <p><strong><a href="https://logicandgate.com" target="_blank" rel="noopener">logicandgate.com</a></strong></p>
-          <p style="font-size:.9rem; margin-top:8px;">Social (coming soon): Twitter / Telegram — <em>@LogicAndGate</em></p>
+        <div class="method-card">
+          <div class="method-icon" aria-hidden="true">🌐</div>
+          <div class="method-content">
+            <h3>Visit Our Website</h3>
+            <p>All official updates, legal docs and company info live here:</p>
+            <p><strong><a href="https://logicandgate.com" target="_blank" rel="noopener">logicandgate.com</a></strong></p>
+            <p class="method-note">Social (coming soon): Twitter / Telegram — <em>@LogicAndGate</em></p>
+          </div>
         </div>
       </div>
 
-      <div class="faq">
+      <div class="faq-section">
         <h2>❓ Frequently Asked Questions</h2>
+        <div class="faq-accordion">
+          <details class="faq-item">
+            <summary>How do I withdraw Tan to my Solana wallet? <span class="chevron" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>Go to the "Wallet" section in the app, tap "Withdraw", enter your Solana wallet address (must be a valid Solana address). Minimum withdrawal is 1 Tan. Withdrawals are processed within 48 hours.</p></div>
+          </details>
 
-        <details class="faq-item">
-          <summary>How do I withdraw Tan to my Solana wallet? <span class="chev" aria-hidden="true">+</span></summary>
-          <div class="faq-body"><p>Go to the "Wallet" section in the app, tap "Withdraw", enter your Solana wallet address (must be a valid Solana address). Minimum withdrawal is 1 Tan. Withdrawals are processed within 48 hours.</p></div>
-        </details>
+          <details class="faq-item">
+            <summary>My referral bonus is not showing. What do I do? <span class="chevron" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>Make sure your friend used your referral code during signup. Bonuses are credited when the referred friend is active with the app. If it's still missing, email us with both usernames, email addresses and UIDs.</p></div>
+          </details>
 
-        <details class="faq-item">
-          <summary>My referral bonus is not showing. What do I do? <span class="chev" aria-hidden="true">+</span></summary>
-          <div class="faq-body"><p>Make sure your friend used your referral code during signup. Bonuses are credited when the referred friend is active with the app. If it's still missing, email us with both usernames, email addresses and UIDs.</p></div>
-        </details>
+          <details class="faq-item">
+            <summary>I lost my progress after reinstalling. <span class="chevron" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>Progress is tied to your device ID. If you changed devices, please contact support with your old and new device identifiers — we can manually transfer your Tan balance. We strongly recommend linking an email in a future update.</p></div>
+          </details>
 
-        <details class="faq-item">
-          <summary>I lost my progress after reinstalling. <span class="chev" aria-hidden="true">+</span></summary>
-          <div class="faq-body"><p>Progress is tied to your device ID. If you changed devices, please contact support with your old and new device identifiers — we can manually transfer your Tan balance. We strongly recommend linking an email in a future update.</p></div>
-        </details>
+          <details class="faq-item">
+            <summary>Is my Solana wallet safe? Can you take my funds? <span class="chevron" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>No — we never have access to your private keys or wallet funds. We only send Solana <strong>to</strong> your wallet. Always keep your recovery phrase secure.</p></div>
+          </details>
 
-        <details class="faq-item">
-          <summary>Is my Solana wallet safe? Can you take my funds? <span class="chev" aria-hidden="true">+</span></summary>
-          <div class="faq-body"><p>No — we never have access to your private keys or wallet funds. We only send Solana <strong>to</strong> your wallet. Always keep your recovery phrase secure.</p></div>
-        </details>
+          <details class="faq-item">
+            <summary>How do I delete my account and personal data? <span class="chevron" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>Send an email to <strong>support@logicandgate.com</strong> with "Delete my Tanzanite account" in the subject. We will remove your in-game data and any stored wallet addresses immediately.</p></div>
+          </details>
 
-        <details class="faq-item">
-          <summary>How do I delete my account and personal data? <span class="chev" aria-hidden="true">+</span></summary>
-          <div class="faq-body"><p>Send an email to <strong>support@logicandgate.com</strong> with "Delete my Tanzanite account" in the subject. We will remove your in-game data and any stored wallet addresses immediately.</p></div>
-        </details>
+          <details class="faq-item">
+            <summary>Can I use multiple devices or accounts? <span class="chevron" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>No. For more information, read our Terms and Conditions (Tanzanite Mining).</p></div>
+          </details>
 
-        <details class="faq-item">
-          <summary>Can I use multiple devices or accounts? <span class="chev" aria-hidden="true">+</span></summary>
-          <div class="faq-body"><p>No. For more information, read our Terms and Conditions (Tanzanite Mining).</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Why are there so many ads? <span class="chev" aria-hidden="true">+</span></summary>
-          <div class="faq-body"><p>Sorry to hear that — but as you see, it's a reward-based ecosystem. For that reason we run ads to keep the service alive and pay out rewards.</p></div>
-        </details>
+          <details class="faq-item">
+            <summary>Why are there so many ads? <span class="chevron" aria-hidden="true">+</span></summary>
+            <div class="faq-answer"><p>Sorry to hear that — but as you see, it's a reward-based ecosystem. For that reason we run ads to keep the service alive and pay out rewards.</p></div>
+          </details>
+        </div>
+        <p class="response-time">🕒 Response time: 1–2 business days.</p>
       </div>
-      <p style="margin-top:32px; text-align:center; color:var(--text-mute);">🕒 Response time: 1–2 business days.</p>
     </section>
   </div>
 
   <footer class="site-footer">
     <div class="container">
-      
       <span class="gem-mark foot-mark" aria-hidden="true">
-        <svg viewBox="0 0 100 120" width="22" height="26">
+        <svg viewBox="0 0 100 120" width="20" height="24">
           <polygon class="f1" points="50,5 95,40 50,40"/>
           <polygon class="f2" points="50,5 50,40 5,40"/>
           <polygon class="f3" points="5,40 20,100 50,40"/>
@@ -144,16 +138,18 @@
           <polygon class="f6" points="50,40 80,100 95,40"/>
         </svg>
       </span>
-      <p>© 2026 Logic & Gate — Tanzanite Mining support.</p>
-      <p><a href="https://logicandgate.com" class="foot-domain" target="_blank" rel="noopener">logicandgate.com</a></p>
-      <p class="foot-links">
-        <a href="index.html">Home</a><span>|</span>
-        <a href="privacy.html">App Privacy</a><span>|</span>
-        <a href="site-privacy.html">Website Privacy</a><span>|</span>
-        <a href="support.html">Support</a><span>|</span>
-        <a href="license.html">License &amp; Legal</a><span>|</span>
-        <a href="company-profile.html">Company Profile</a>
-      </p>
+      <div class="footer-content">
+        <p>© 2026 Logic & Gate — Tanzanite Mining support.</p>
+        <p><a href="https://logicandgate.com" class="foot-domain" target="_blank" rel="noopener">logicandgate.com</a></p>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="privacy.html">App Privacy</a>
+          <a href="site-privacy.html">Website Privacy</a>
+          <a href="support.html">Support</a>
+          <a href="license.html">License &amp; Legal</a>
+          <a href="company-profile.html">Company Profile</a>
+        </nav>
+      </div>
     </div>
   </footer>
 
