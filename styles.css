@@ -6,7 +6,6 @@
     --surface-light: #21262d;
     --text-main: #ffffff;
     --text-mute: #8b949e;
-    --accent-blue: #58a6ff;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -18,247 +17,111 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: var(--bg-dark);
     color: var(--text-main);
     line-height: 1.6;
-    overflow-x: hidden;
-    padding-bottom: 80px; /* Space for bottom nav */
-}
-
-/* --- The Coin Animations --- */
-.coin-container {
-    display: inline-block;
-    position: relative;
-    perspective: 1000px;
-}
-
-.coin-img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    filter: drop-shadow(0 0 8px var(--gold-glow));
-    animation: coin-float 3s ease-in-out infinite;
-}
-
-.hero-coin {
-    width: 200px;
-    height: 200px;
-    animation: coin-spin 8s linear infinite;
-}
-
-@keyframes coin-float {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-10px) scale(1.05); }
-}
-
-@keyframes coin-spin {
-    0% { transform: rotateY(0deg); }
-    100% { transform: rotateY(360deg); }
-}
-
-/* --- App Top Bar --- */
-.app-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    background: var(--surface-dark);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid var(--surface-light);
-}
-
-.logo-group {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: inherit;
-}
-
-.logo-text h1 {
-    font-size: 1.2rem;
-    margin: 0;
-    font-weight: 700;
-    color: var(--primary-gold);
-}
-
-.logo-text p {
-    font-size: 0.7rem;
-    margin: 0;
-    color: var(--text-mute);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* --- Main Content Layout --- */
-.container {
-    padding: 20px;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.page-header {
-    margin-bottom: 30px;
-    text-align: left;
-}
-
-.page-header h1 {
-    font-size: 2rem;
-    margin: 10px 0;
-}
-
-.eyebrow {
-    color: var(--primary-gold);
-    font-weight: 600;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-}
-
-/* --- Material Cards --- */
-.panel, .card {
-    background: var(--surface-dark);
-    border-radius: 24px;
-    padding: 24px;
-    margin-bottom: 20px;
-    border: 1px solid var(--surface-light);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-}
-
-.feature-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.card .icon {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-/* --- Form & Buttons --- */
-.btn {
-    display: block;
+    overflow-x: hidden; /* Prevents side-scrolling */
     width: 100%;
-    padding: 16px;
-    border-radius: 16px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition);
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
+    padding-bottom: 90px; /* Space for bottom nav */
 }
 
-.btn-primary {
-    background: var(--primary-gold);
-    color: #000;
+/* --- Coin Animations --- */
+.coin-container { display: inline-block; position: relative; perspective: 1000px; }
+.coin-img { 
+    width: 40px; height: 40px; 
+    object-fit: contain; 
+    filter: drop-shadow(0 0 8px var(--gold-glow)); 
+    animation: coin-float 3s ease-in-out infinite; 
+}
+.hero-coin { width: 180px; height: 180px; animation: coin-spin 8s linear infinite; }
+
+@keyframes coin-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes coin-spin { 0% { transform: rotateY(0deg); } 100% { transform: rotateY(360deg); } }
+
+/* --- Header --- */
+.app-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 15px 20px; background: var(--surface-dark);
+    position: sticky; top: 0; z-index: 100;
+    border-bottom: 1px solid var(--surface-light);
+    width: 100%;
+}
+.logo-group { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+.logo-text h1 { font-size: 1.1rem; margin: 0; color: var(--primary-gold); }
+.logo-text p { font-size: 0.6rem; margin: 0; color: var(--text-mute); text-transform: uppercase; }
+
+/* --- Content --- */
+.container { padding: 20px; max-width: 100%; margin: 0 auto; }
+.page-header { margin-bottom: 25px; }
+.page-header h1 { font-size: 1.8rem; margin: 10px 0; }
+.eyebrow { color: var(--primary-gold); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; }
+
+.panel, .card {
+    background: var(--surface-dark); border-radius: 20px;
+    padding: 20px; margin-bottom: 20px; border: 1px solid var(--surface-light);
 }
 
-.btn-outline {
-    background: transparent;
-    border: 2px solid var(--surface-light);
-    color: var(--text-main);
-    margin-top: 10px;
+/* --- Buttons --- */
+.btn {
+    display: block; width: 100%; padding: 14px; border-radius: 12px;
+    text-align: center; text-decoration: none; font-weight: 600;
+    transition: var(--transition); border: none; cursor: pointer; font-size: 0.95rem;
 }
+.btn-primary { background: var(--primary-gold); color: #000; }
+.btn-outline { background: transparent; border: 1px solid var(--surface-light); color: var(--text-main); margin-top: 10px; }
 
-.copy-btn {
-    background: var(--surface-light);
-    color: var(--primary-gold);
-    border: none;
-    padding: 4px 12px;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    margin-left: 8px;
-}
-
-/* --- FAQ (Android Expansion Panel) --- */
-details.faq-item {
-    background: var(--surface-light);
-    margin-bottom: 10px;
-    border-radius: 16px;
-    overflow: hidden;
-}
-
-summary {
-    padding: 16px;
-    cursor: pointer;
-    font-weight: 600;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-}
-
-.faq-body {
-    padding: 0 16px 16px 16px;
-    color: var(--text-mute);
-    font-size: 0.95rem;
-}
-
-/* --- Bottom Navigation Bar --- */
+/* --- Bottom Nav --- */
 .bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 70px;
-    background: var(--surface-dark);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-top: 1px solid var(--surface-light);
-    z-index: 1000;
-    padding-bottom: env(safe-area-inset-bottom);
+    position: fixed; bottom: 0; left: 0; width: 100%;
+    height: 65px; background: var(--surface-dark);
+    display: flex; justify-content: space-around; align-items: center;
+    border-top: 1px solid var(--surface-light); z-index: 1000;
 }
-
 .nav-item {
-    text-decoration: none;
-    color: var(--text-mute);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 0.7rem;
-    font-weight: 500;
-    transition: var(--transition);
+    text-decoration: none; color: var(--text-mute);
+    display: flex; flex-direction: column; align-items: center;
+    font-size: 0.65rem; transition: var(--transition);
 }
+.nav-item.active { color: var(--primary-gold); }
+.nav-item svg { width: 22px; height: 22px; margin-bottom: 4px; }
 
-.nav-item.active {
-    color: var(--primary-gold);
+/* --- Side Menu Drawer --- */
+.menu-drawer {
+    position: fixed; top: 0; right: -100%; width: 80%; height: 100%;
+    background: var(--surface-dark); z-index: 2000;
+    transition: var(--transition); padding: 40px 20px;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
 }
+.menu-drawer.open { right: 0; }
+.menu-drawer h2 { color: var(--primary-gold); margin-bottom: 20px; }
+.menu-link {
+    display: block; padding: 15px; color: white; text-decoration: none;
+    border-bottom: 1px solid var(--surface-light); font-weight: 500;
+}
+.overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7); z-index: 1500; display: none;
+}
+.overlay.open { display: block; }
 
-.nav-item svg {
-    width: 24px;
-    height: 24px;
-    margin-bottom: 4px;
+/* --- Back to Top FAB --- */
+.back-to-top {
+    position: fixed; bottom: 80px; right: 20px;
+    width: 50px; height: 50px; border-radius: 25px;
+    background: var(--primary-gold); color: #000;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; font-weight: bold; border: none;
+    cursor: pointer; z-index: 900; box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    opacity: 0; visibility: hidden; transition: var(--transition);
 }
+.back-to-top.visible { opacity: 1; visibility: visible; }
 
 /* --- Toast --- */
 .toast {
-    position: fixed;
-    bottom: 90px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #323639;
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 25px;
-    font-size: 0.9rem;
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
-    z-index: 2000;
+    position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%);
+    background: #323639; color: #fff; padding: 10px 20px;
+    border-radius: 20px; font-size: 0.8rem; opacity: 0;
+    transition: opacity 0.3s; z-index: 3000;
 }
-
-.toast.is-visible {
-    opacity: 1;
-}
+.toast.is-visible { opacity: 1; }
