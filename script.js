@@ -1,56 +1,59 @@
 (function () {
   "use strict";
 
-  /* ---- Active Link Highlighting ---- */
-  (function setActiveLink() {
-    var path = window.location.pathname.split("/").pop() || "index.html";
-    document.querySelectorAll(".nav-item").forEach(function (a) {
-      var href = a.getAttribute("href");
-      if (href === path) {
-        a.classList.add("active");
-      } else {
-        a.classList.remove("active");
-      }
-    });
-  })();
+  /* ---- Side Menu Logic ---- */
+  var menuToggle = document.getElementById("menuToggle");
+  var menuDrawer = document.getElementById("menuDrawer");
+  var overlay = document.getElementById("overlay");
 
-  /* ---- Toast Notifications ---- */
-  var toastEl = document.querySelector(".toast");
-  var toastTimer;
-  function showToast(msg) {
-    if (!toastEl) return;
-    toastEl.textContent = msg;
-    toastEl.classList.add("is-visible");
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(function () {
-      toastEl.classList.remove("is-visible");
-    }, 2500);
+  if (menuToggle) {
+    menuToggle.addEventListener("click", function () {
+      menuDrawer.classList.add("open");
+      overlay.classList.add("open");
+    });
   }
 
-  /* ---- Copy-to-Clipboard Logic ---- */
+  if (overlay) {
+    overlay.addEventListener("click", function () {
+      menuDrawer.classList.remove("open");
+      overlay.classList.remove("open");
+    });
+  }
+
+  /* ---- Back to Top Logic ---- */
+  var backBtn = document.getElementById("backToTop");
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 300) {
+      backBtn.classList.add("visible");
+    } else {
+      backBtn.classList.remove("visible");
+    }
+  });
+
+  if (backBtn) {
+    backBtn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  /* ---- Active Link Highlighting ---- */
+  var path = window.location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".nav-item").forEach(function (a) {
+    if (a.getAttribute("href") === path) {
+      a.classList.add("active");
+    }
+  });
+
+  /* ---- Copy-to-Clipboard --- */
   document.querySelectorAll("[data-copy]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var value = btn.getAttribute("data-copy");
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(value).then(
-          function () { showToast("Copied to clipboard! ✅"); },
-          function () { showToast("Error copying text"); }
-        );
-      } else {
-        showToast("Copy not supported on this browser");
-      }
-    });
-  });
-
-  /* ---- FAQ Accordion Logic ---- */
-  var faqItems = document.querySelectorAll("details.faq-item");
-  faqItems.forEach(function (item) {
-    item.addEventListener("toggle", function () {
-      if (item.open) {
-        faqItems.forEach(function (other) {
-          if (other !== item) other.open = false;
-        });
-      }
+      navigator.clipboard.writeText(value).then(function () {
+        var toast = document.querySelector(".toast");
+        toast.textContent = "Copied to clipboard! ✅";
+        toast.classList.add("is-visible");
+        setTimeout(function () { toast.classList.remove("is-visible"); }, 2000);
+      });
     });
   });
 })();
