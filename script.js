@@ -1,106 +1,133 @@
-/* Logic & Gate — shared site script. No backend, no tracking, no storage. */
+/* Logic & Gate — Android-Optimized Site Script */
 (function () {
   "use strict";
 
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // Prefers-reduced-motion check
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---- mobile nav toggle ---- */
-  var toggle = document.querySelector(".nav-toggle");
-  var navLinks = document.querySelector(".nav-links");
-  if (toggle && navLinks) {
-    toggle.addEventListener("click", function () {
-      var open = navLinks.classList.toggle("is-open");
-      toggle.classList.toggle("is-open", open);
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  /* ===== Mobile Navigation (Enhanced for Android) ===== */
+  const navToggle = document.querySelector(".nav-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  
+  // Note: Bottom nav replaces hamburger on inner pages, but keeping toggle for potential future use
+  if (navToggle && navLinks) {
+    navToggle.addEventListener("click", function () {
+      const open = navLinks.classList.toggle("is-open");
+      navToggle.classList.toggle("is-open", open);
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      
+      // Prevent body scroll when menu open
+      document.body.style.overflow = open ? "hidden" : "";
     });
-    navLinks.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () {
+    
+    // Close nav when clicking links
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
         navLinks.classList.remove("is-open");
-        toggle.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
+        navToggle.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
       });
     });
   }
 
-  /* ---- active nav link by current filename (robust across all pages) ---- */
+  /* ===== Active Nav Link Highlight ===== */
   (function setActiveLink() {
-    var path = window.location.pathname.split("/").pop() || "index.html";
-    document.querySelectorAll(".nav-links a").forEach(function (a) {
-      var href = a.getAttribute("href");
+    const path = window.location.pathname.split("/").pop() || "index.html";
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      const href = link.getAttribute("href");
       if (href === path || (path === "" && href === "index.html")) {
-        a.classList.add("active");
+        link.classList.add("active");
       } else {
-        a.classList.remove("active");
+        link.classList.remove("active");
       }
     });
   })();
 
-  /* ---- header scroll shadow + scroll progress bar ---- */
-  var header = document.querySelector(".site-header");
-  var progress = document.querySelector(".scroll-progress");
+  /* ===== Header Scroll Effects ===== */
+  const header = document.querySelector(".site-header");
+  const progress = document.querySelector(".scroll-progress");
+  
   function onScroll() {
-    var y = window.scrollY || document.documentElement.scrollTop;
-    if (header) header.classList.toggle("is-scrolled", y > 8);
+    const y = window.scrollY || document.documentElement.scrollTop;
+    
+    // Header shadow on scroll
+    if (header) {
+      header.classList.toggle("is-scrolled", y > 8);
+    }
+    
+    // Scroll progress bar
     if (progress) {
-      var docH = document.documentElement.scrollHeight - window.innerHeight;
-      var pct = docH > 0 ? Math.min(100, (y / docH) * 100) : 0;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? Math.min(100, (y / docHeight) * 100) : 0;
       progress.style.width = pct + "%";
     }
-    var backBtn = document.querySelector(".back-to-top");
-    if (backBtn) backBtn.classList.toggle("is-visible", y > 480);
+    
+    // Back-to-top button
+    const backBtn = document.querySelector(".back-to-top");
+    if (backBtn) {
+      backBtn.classList.toggle("is-visible", y > 400);
+    }
   }
+  
   document.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  /* ---- back to top ---- */
-  var backBtn = document.querySelector(".back-to-top");
+  /* ===== Back to Top ===== */
+  const backBtn = document.querySelector(".back-to-top");
   if (backBtn) {
     backBtn.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+      window.scrollTo({
+        top: 0,
+        behavior: reduceMotion ? "auto" : "smooth"
+      });
     });
   }
 
-  /* ---- scroll reveal ---- */
-  var revealEls = document.querySelectorAll(".reveal");
+  /* ===== Scroll Reveal (Optimized) ===== */
+  const revealEls = document.querySelectorAll(".reveal");
   if (revealEls.length) {
     if (reduceMotion || !("IntersectionObserver" in window)) {
-      revealEls.forEach(function (el) { el.classList.add("is-visible"); });
+      revealEls.forEach(el => el.classList.add("is-visible"));
     } else {
-      var io = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
             if (entry.isIntersecting) {
               entry.target.classList.add("is-visible");
-              io.unobserve(entry.target);
+              observer.unobserve(entry.target);
             }
           });
         },
-        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+        { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
       );
-      revealEls.forEach(function (el) { io.observe(el); });
+      
+      revealEls.forEach(el => observer.observe(el));
     }
   }
 
-  /* ---- toast + copy-to-clipboard ---- */
-  var toastEl = document.querySelector(".toast");
-  var toastTimer;
-  function showToast(msg) {
+  /* ===== Toast & Copy-to-Clipboard ===== */
+  const toastEl = document.querySelector(".toast");
+  let toastTimer;
+  
+  function showToast(message) {
     if (!toastEl) return;
-    toastEl.textContent = msg;
+    toastEl.textContent = message;
     toastEl.classList.add("is-visible");
+    
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(function () {
+    toastTimer = setTimeout(() => {
       toastEl.classList.remove("is-visible");
-    }, 1800);
+    }, 2000);
   }
 
-  document.querySelectorAll("[data-copy]").forEach(function (btn) {
+  document.querySelectorAll("[data-copy]").forEach(btn => {
     btn.addEventListener("click", function () {
-      var value = btn.getAttribute("data-copy");
+      const value = btn.getAttribute("data-copy");
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(value).then(
-          function () { showToast("Copied " + value); },
-          function () { showToast("Couldn't copy — select and copy manually"); }
+          () => showToast(`Copied ${value}`),
+          () => showToast("Couldn't copy — select and copy manually")
         );
       } else {
         showToast("Copy not supported — select and copy manually");
@@ -108,15 +135,133 @@
     });
   });
 
-  /* ---- FAQ: only one open at a time (optional polish, still native <details>) ---- */
-  var faqItems = document.querySelectorAll("details.faq-item");
-  faqItems.forEach(function (item) {
+  /* ===== FAQ: Single Open Accordion ===== */
+  const faqItems = document.querySelectorAll("details.faq-item");
+  faqItems.forEach(item => {
     item.addEventListener("toggle", function () {
-      if (item.open) {
-        faqItems.forEach(function (other) {
-          if (other !== item) other.open = false;
+      if (this.open) {
+        faqItems.forEach(other => {
+          if (other !== this) other.open = false;
         });
       }
     });
   });
+
+  /* ===== Android-Specific Optimizations ===== */
+  // Disable text selection on non-text elements for better touch feel
+  document.addEventListener("selectstart", function(e) {
+    if (!e.target.matches('input, textarea, [contenteditable]')) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+  
+  // Prevent pull-to-refresh on Android Chrome when at top
+  let lastTouchY = null;
+  document.addEventListener("touchstart", function(e) {
+    if (e.touches.length === 1) {
+      lastTouchY = e.touches[0].clientY;
+    }
+  }, { passive: true });
+  
+  document.addEventListener("touchmove", function(e) {
+    if (e.touches.length === 1 && lastTouchY !== null) {
+      const touchY = e.touches[0].clientY;
+      const diffY = touchY - lastTouchY;
+      
+      // Prevent pull-to-refresh when at top and dragging down
+      if (window.scrollY === 0 && diffY > 0) {
+        e.preventDefault();
+      }
+      lastTouchY = touchY;
+    }
+  }, { passive: false });
+  
+  // Add 300ms click delay removal for faster touch response
+  // (Modern browsers handle this, but keeping for compatibility)
+  if ('PointerEvent' in window) {
+    // Pointer events already handle this well
+  } else {
+    // Fallback for older Android browsers
+    FastClick.attach(document.body);
+  }
 })();
+
+// FastClick polyfill (lightweight version for Android touch delay)
+if (typeof FastClick === 'undefined') {
+  var FastClick = function(layer, options) {
+    'use strict';
+    var oldOnClick;
+
+    options = options || {};
+
+    /**
+     * Whether a click is currently being tracked.
+     */
+    var trackingClick = false;
+
+
+    /**
+     * Timestamp for when click tracking started.
+     */
+    var trackingClickTime = 0;
+
+
+    /**
+     * The element being tracked for a click.
+     */
+    var targetElement = null;
+
+
+    /**
+     * X-coordinate of touch start event.
+     */
+    var touchX = null;
+
+
+    /**
+     * Y-coordinate of touch start event.
+     */
+    var touchY = null;
+
+
+    /**
+     * ID of the last touch, retrieved from Touch.identifier.
+     */
+    var lastTouchIdentifier = 0;
+
+
+    /**
+     * FastClick boundary.
+     *
+     * @param {Element|string} layer
+     * @param {Object} options
+     */
+    function FastClick(layer, options) {
+      var layer, options;
+
+      if (!layer || !layer.nodeType) {
+        throw new TypeError('Layer must be a document node or element');
+      }
+
+      /** @type {Element} */
+      this.layer = layer;
+
+      if (options.tapDelay !== undefined) {
+        this.tapDelay = options.tapDelay;
+      }
+
+      if (options.tapTimeout !== undefined) {
+        this.tapTimeout = options.tapTimeout;
+      }
+
+      if (!this.tapDelay) {
+        this.tapDelay = 200;
+      }
+
+      if (!this.tapTimeout) {
+        this.tapTimeout = 700;
+      }
+
+      this._bind = function(eventName, eventHandler) {
+        if ('addEventListener' in layer) {
+          layer.addEventListener
