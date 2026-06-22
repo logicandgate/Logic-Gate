@@ -29,11 +29,10 @@
   <div class="bg-grain" aria-hidden="true"></div>
 
   <header class="site-header">
-    <div class="container header-flex">
+    <div class="container">
       <a href="index.html" class="logo" aria-label="Logic & Gate home">
-        
         <span class="gem-mark" aria-hidden="true">
-          <svg viewBox="0 0 100 120" width="30" height="36">
+          <svg viewBox="0 0 100 120" width="28" height="34">
             <polygon class="f1" points="50,5 95,40 50,40"/>
             <polygon class="f2" points="50,5 50,40 5,40"/>
             <polygon class="f3" points="5,40 20,100 50,40"/>
@@ -51,97 +50,81 @@
           <p>innovate · simulate · earn</p>
         </span>
       </a>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="privacy.html">App Privacy</a>
-        <a href="site-privacy.html">Website Privacy</a>
-        <a href="support.html">Support</a>
-        <a href="license.html">License</a>
-        <a href="company-profile.html">Company Profile</a>
-      </nav>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav"><span></span></button>
     </div>
   </header>
-  <div class="scroll-progress" aria-hidden="true"></div>
+
   <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <p class="eyebrow load-in d1">Play-to-Earn · Android</p>
-        <h2 class="load-in d2">Mine <span class="accent">Tanzanite</span>.<br>Earn real Solana.</h2>
-        <p class="lede load-in d3">Tap to mine virtual gems, play mini games, build a streak, mystery box, grow your tan tree and invite friends — every bit of Tan you collect converts straight to a Solana wallet.</p>
-        <div class="hero-cta load-in d4">
-          <!-- 🚀 APP LAUNCH: when Tanzanite Mining goes live on Google Play, change THIS button only:
-                 1. href="#"  →  your real Play Store URL
-                 2. delete the  aria-disabled="true"  attribute
-               Optional: change the button text from "Coming soon" to "Get it on Google Play". -->
-          <a href="#" class="btn" aria-disabled="true" target="_blank" rel="noopener">📱 Coming soon on Google Play</a>
-          <a href="support.html" class="btn btn-outline">💬 Get Support</a>
-        </div>
+    <div class="container hero-content">
+      <p class="eyebrow">Play-to-Earn · Android</p>
+      <h1>Mine <span class="accent">Tanzanite</span>.<br>Earn real Solana.</h1>
+      <p class="hero-description">Tap to mine virtual gems, play mini games, build a streak, mystery box, grow your tan tree and invite friends — every bit of Tan you collect converts straight to a Solana wallet.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary" aria-disabled="true" target="_blank" rel="noopener">📱 Coming soon on Google Play</a>
+        <a href="support.html" class="btn btn-outline">💬 Get Support</a>
       </div>
-      <div class="hero-gem-stage load-in d2">
-        
-        <span class="gem-mark" aria-hidden="true">
-          <svg viewBox="0 0 100 120" width="240" height="280">
-            <polygon class="f1" points="50,5 95,40 50,40"/>
-            <polygon class="f2" points="50,5 50,40 5,40"/>
-            <polygon class="f3" points="5,40 20,100 50,40"/>
-            <polygon class="f4" points="50,40 20,100 50,115"/>
-            <polygon class="f5" points="50,40 50,115 80,100"/>
-            <polygon class="f6" points="50,40 80,100 95,40"/>
-            <polyline class="edge" points="50,5 95,40 80,100 50,115 20,100 5,40 50,5"/>
-            <polyline class="edge" points="50,5 50,115"/>
-            <polyline class="edge" points="5,40 95,40"/>
-            <polyline class="edge" points="20,100 50,40 80,100"/>
-          </svg>
-        </span>
-      </div>
+    </div>
+    <div class="hero-gem" aria-hidden="true">
+      <span class="gem-mark">
+        <svg viewBox="0 0 100 120" width="200" height="240">
+          <polygon class="f1" points="50,5 95,40 50,40"/>
+          <polygon class="f2" points="50,5 50,40 5,40"/>
+          <polygon class="f3" points="5,40 20,100 50,40"/>
+          <polygon class="f4" points="50,40 20,100 50,115"/>
+          <polygon class="f5" points="50,40 50,115 80,100"/>
+          <polygon class="f6" points="50,40 80,100 95,40"/>
+          <polyline class="edge" points="50,5 95,40 80,100 50,115 20,100 5,40 50,5"/>
+          <polyline class="edge" points="50,5 50,115"/>
+          <polyline class="edge" points="5,40 95,40"/>
+          <polyline class="edge" points="20,100 50,40 80,100"/>
+        </svg>
+      </span>
     </div>
   </section>
 
-  <div class="container"><div class="divider-circuit" aria-hidden="true"></div></div>
+  <div class="divider" aria-hidden="true"></div>
 
   <section class="features">
     <div class="container">
       <h2 class="section-title">Game Features</h2>
-      <p class="section-sub">Eight systems, one loop: mine, streak, mystery box, tan tree, play, invite, return daily, withdraw.</p>
-      <div class="grid">
-        <article class="card reveal">
-          <span class="icon" aria-hidden="true">💎</span>
+      <p class="section-subtitle">Eight systems, one loop: mine, streak, mystery box, tan tree, play, invite, return daily, withdraw.</p>
+      <div class="features-grid">
+        <article class="feature-card">
+          <span class="feature-icon" aria-hidden="true">💎</span>
           <h3>Virtual Mining</h3>
           <p>Tap to mine Tanzanite gems and earn Tan coins. Upgrade your pickaxe for more rewards.</p>
         </article>
-        <article class="card reveal">
-          <span class="icon" aria-hidden="true">🎮</span>
+        <article class="feature-card">
+          <span class="feature-icon" aria-hidden="true">🎮</span>
           <h3>Mini Games</h3>
           <p>Play interactive cave mining, word catching, and gems merging games to boost your Tan earnings daily.</p>
-           </article>
-         <article class="card reveal">
-          <span class="icon" aria-hidden="true">📅</span>
+        </article>
+        <article class="feature-card">
+          <span class="feature-icon" aria-hidden="true">📅</span>
           <h3>Daily Rewards</h3>
           <p>Login every day for bonus Tan, by claiming daily reward.</p>
-            </article>
-        <article class="card reveal">
-          <span class="icon" aria-hidden="true">🔥</span>
+        </article>
+        <article class="feature-card">
+          <span class="feature-icon" aria-hidden="true">🔥</span>
           <h3>Daily Streak</h3>
           <p>Interact any of our eco-system features for increase the streak.</p>
         </article>
-        <article class="card reveal">
-          <span class="icon" aria-hidden="true">🎁</span>
+        <article class="feature-card">
+          <span class="feature-icon" aria-hidden="true">🎁</span>
           <h3>Mystery Box</h3>
           <p>interact any of our eco-system features for unlock the mystery box to get up to 1 TAN.</p>
         </article>
-        <article class="card reveal">
-          <span class="icon" aria-hidden="true">🌳</span>
+        <article class="feature-card">
+          <span class="feature-icon" aria-hidden="true">🌳</span>
           <h3>Tan Tree</h3>
           <p>Tan tree lets you grow your own tanzanite cystal, grow the tree and get your crystal.</p>
         </article>
-        <article class="card reveal">
-          <span class="icon" aria-hidden="true">👥</span>
+        <article class="feature-card">
+          <span class="feature-icon" aria-hidden="true">👥</span>
           <h3>Referral Program</h3>
           <p>Invite friends and get 10% of their mining rewards.</p>
         </article>
-        <article class="card reveal">
-          <span class="icon" aria-hidden="true">🪙</span>
+        <article class="feature-card">
+          <span class="feature-icon" aria-hidden="true">🪙</span>
           <h3>Tan → Solana</h3>
           <p>Withdraw your earned Tan directly to any Solana wallet (minimum 1 Tan).</p>
         </article>
@@ -151,9 +134,8 @@
 
   <footer class="site-footer">
     <div class="container">
-      
       <span class="gem-mark foot-mark" aria-hidden="true">
-        <svg viewBox="0 0 100 120" width="22" height="26">
+        <svg viewBox="0 0 100 120" width="20" height="24">
           <polygon class="f1" points="50,5 95,40 50,40"/>
           <polygon class="f2" points="50,5 50,40 5,40"/>
           <polygon class="f3" points="5,40 20,100 50,40"/>
@@ -162,16 +144,18 @@
           <polygon class="f6" points="50,40 80,100 95,40"/>
         </svg>
       </span>
-      <p>© 2026 Logic & Gate. All rights reserved by Logic & Gate company.</p>
-      <p><a href="https://logicandgate.com" class="foot-domain" target="_blank" rel="noopener">logicandgate.com</a></p>
-      <p class="foot-links">
-        <a href="index.html">Home</a><span>|</span>
-        <a href="privacy.html">App Privacy</a><span>|</span>
-        <a href="site-privacy.html">Website Privacy</a><span>|</span>
-        <a href="support.html">Support</a><span>|</span>
-        <a href="license.html">License &amp; Legal</a><span>|</span>
-        <a href="company-profile.html">Company Profile</a>
-      </p>
+      <div class="footer-content">
+        <p>© 2026 Logic & Gate. All rights reserved by Logic & Gate company.</p>
+        <p><a href="https://logicandgate.com" class="foot-domain" target="_blank" rel="noopener">logicandgate.com</a></p>
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="privacy.html">App Privacy</a>
+          <a href="site-privacy.html">Website Privacy</a>
+          <a href="support.html">Support</a>
+          <a href="license.html">License &amp; Legal</a>
+          <a href="company-profile.html">Company Profile</a>
+        </nav>
+      </div>
     </div>
   </footer>
 
