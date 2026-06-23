@@ -976,3 +976,268 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 @media (min-width: 1024px) {
   :root { --max: 800px; }
 }
+
+/* ============================================================
+   HOME — Buttons
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 13px 24px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  background: var(--grad-gold);
+  color: var(--bg-0);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .01em;
+  transition:
+    transform   .28s var(--ease-bounce),
+    box-shadow  .25s var(--ease),
+    filter      .20s;
+  box-shadow: 0 8px 26px -8px var(--gold-glow);
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 32px -8px var(--gold-glow);
+  filter: brightness(1.07);
+}
+.btn[aria-disabled="true"] {
+  opacity: .55;
+  cursor: default;
+  pointer-events: none;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+  border: 1.5px solid rgba(245,183,49,0.40);
+  box-shadow: none;
+}
+.btn-outline:hover {
+  background: rgba(245,183,49,0.08);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 4px rgba(245,183,49,0.07);
+}
+
+/* ============================================================
+   HOME — Hero
+   ============================================================ */
+.hero {
+  padding: 16px 0 28px;
+  text-align: center;
+}
+
+/* XL coin for hero stage */
+.coin--xl { --coin-w: 162px; }
+
+/* coin + orbit + halo stage */
+.hero-coin-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 228px;
+  margin-bottom: 26px;
+}
+
+/* large ambient glow behind coin */
+.hero-halo {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side,
+    rgba(245,183,49,0.26) 0%,
+    rgba(139,92,246,0.10) 50%,
+    transparent 75%);
+  filter: blur(32px);
+  animation: haloBreath 3.2s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* dashed orbit ring with travelling dot */
+.coin-orbit {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  width: 218px; height: 218px;
+  border-radius: 50%;
+  border: 1px dashed rgba(245,183,49,0.22);
+  animation: orbitSpin 10s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+.coin-orbit::before {
+  content: "";
+  position: absolute;
+  top: 50%; left: -4px;
+  transform: translateY(-50%);
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--gold-2);
+  box-shadow: 0 0 10px rgba(245,183,49,0.80), 0 0 20px rgba(245,183,49,0.35);
+}
+
+@keyframes orbitSpin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* coin wrap sits on top of orbit + halo */
+.hero-coin-stage .coin-wrap { position: relative; z-index: 2; }
+
+/* eyebrow tag */
+.hero-eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: .72;
+  margin: 0 0 12px;
+  padding: 5px 12px;
+  background: rgba(245,183,49,0.08);
+  border: 1px solid rgba(245,183,49,0.18);
+  border-radius: 999px;
+}
+
+/* hero h1 */
+.hero h1 {
+  font-size: clamp(30px, 8.5vw, 54px);
+  letter-spacing: .025em;
+  line-height: 1.08;
+  margin: 0 0 14px;
+}
+.hero h1 .accent {
+  background: var(--grad-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* hero body text */
+.hero .lede {
+  font-size: 14.5px;
+  color: var(--text-2);
+  line-height: 1.74;
+  max-width: 42ch;
+  margin: 0 auto 26px;
+}
+
+/* CTA button row */
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* ============================================================
+   HOME — Features Section
+   ============================================================ */
+.features {
+  padding: 0 0 44px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 5.5vw, 32px);
+  font-weight: 700;
+  letter-spacing: .04em;
+  margin: 0 0 8px;
+  color: var(--text);
+}
+.section-title::after {
+  content: "";
+  display: block;
+  width: 34px; height: 2.5px;
+  background: var(--grad-gold);
+  border-radius: 2px;
+  margin: 10px auto 0;
+}
+
+.section-sub {
+  font-size: 14px;
+  color: var(--text-2);
+  max-width: 44ch;
+  margin: 12px auto 0;
+  line-height: 1.66;
+}
+
+/* 2-column on mobile, 4-column on wide screens */
+.feat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+@media (min-width: 640px) {
+  .feat-grid { gap: 12px; }
+}
+
+@media (min-width: 800px) {
+  .feat-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.feat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 16px 14px;
+  background: var(--bg-1);
+  background-image: var(--grad-card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  transition:
+    border-color .25s var(--ease),
+    transform    .28s var(--ease-bounce),
+    box-shadow   .25s;
+}
+.feat-card:hover {
+  border-color: var(--line-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -10px rgba(245,183,49,0.22);
+}
+
+.feat-icon {
+  font-size: 24px;
+  line-height: 1;
+  display: block;
+}
+
+.feat-card h3 {
+  font-size: 13.5px;
+  letter-spacing: .04em;
+  margin: 0;
+  color: var(--text);
+}
+
+.feat-card p {
+  font-size: 12px;
+  color: var(--text-3);
+  margin: 0;
+  line-height: 1.60;
+}
+
+/* desktop hero: two-column */
+@media (min-width: 640px) {
+  .hero { padding: 24px 0 36px; }
+  .hero-coin-stage { height: 250px; }
+  .coin--xl { --coin-w: 190px; }
+  .coin-orbit { width: 248px; height: 248px; }
+  .hero-halo  { width: 320px; height: 320px; }
+}
