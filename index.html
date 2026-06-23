@@ -1,74 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="google-site-verification" content="DAcbI2HrYKFaGq9K4h2BNnw3FyqWTo9AsLIa5IV_dEE">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#0a0c10">
-    <title>Logic & Gate</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#07050F">
+  <meta name="google-site-verification" content="DAcbI2HrYKFaGq9K4h2BNnw3FyqWTo9AsLIa5IV_dEE">
+  <meta name="description" content="Logic &amp; Gate builds Tanzanite Mining — mine virtual gems, play mini games, invite friends, and convert TAN to real Solana.">
+  <title>Logic &amp; Gate — Tanzanite Mining</title>
+  <link rel="canonical" href="https://logicandgate.com/">
+  <meta property="og:title"       content="Logic &amp; Gate — Tanzanite Mining">
+  <meta property="og:description" content="Logic &amp; Gate builds Tanzanite Mining — mine virtual gems, play mini games, invite friends, and convert TAN to real Solana.">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://logicandgate.com/">
+  <meta property="og:site_name"   content="Logic &amp; Gate">
+  <meta name="twitter:card"        content="summary">
+  <meta name="twitter:title"       content="Logic &amp; Gate — Tanzanite Mining">
+  <meta name="twitter:description" content="Logic &amp; Gate builds Tanzanite Mining — mine virtual gems, play mini games, invite friends, and convert TAN to real Solana.">
+
+  <link rel="icon" type="image/png" href="images/coin.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=DM+Sans:wght@400;500;600&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Logic & Gate",
+    "url": "https://logicandgate.com",
+    "email": "support@logicandgate.com",
+    "founder": "Solayman Islam Ruman",
+    "foundingDate": "2026-04-16",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bhandaria",
+      "addressRegion": "Pirojpur",
+      "postalCode": "8550",
+      "addressCountry": "BD"
+    }
+  }
+  </script>
 </head>
 <body>
 
-    <!-- Menu Overlay & Drawer -->
-    <div class="overlay" id="overlay"></div>
-    <div class="menu-drawer" id="menuDrawer">
-        <h2>Menu</h2>
-        <a href="index.html" class="menu-link">Home</a>
-        <a href="support.html" class="menu-link">Support Center</a>
-        <a href="company-profile.html" class="menu-link">Company Profile</a>
-        <a href="license.html" class="menu-link">License & Legal</a>
-        <a href="privacy.html" class="menu-link">App Privacy</a>
-        <a href="site-privacy.html" class="menu-link">Website Privacy</a>
+  <div class="bg-space" aria-hidden="true"></div>
+  <div class="bg-noise"  aria-hidden="true"></div>
+
+  <!-- ── Header ── -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Logic &amp; Gate home">
+        <span class="coin-wrap coin-wrap--logo">
+          <img class="coin coin--logo" src="images/coin.png" alt="" width="27" height="27" aria-hidden="true">
+        </span>
+        <span class="logo-text">
+          <span class="logo-name">Logic &amp; Gate</span>
+          <span class="logo-sub">tanzanite mining</span>
+        </span>
+      </a>
+      <nav class="desk-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="license.html">License</a>
+        <a href="company-profile.html">Company</a>
+      </nav>
     </div>
+  </header>
+  <div class="scroll-progress" aria-hidden="true"></div>
 
-    <header class="app-header">
-        <a href="index.html" class="logo-group">
-            <div class="coin-container"><img src="coin.png" class="coin-img" alt="Coin"></div>
-            <div class="logo-text">
-                <h1>Logic & Gate</h1>
-                <p>innovate · simulate · earn</p>
-            </div>
-        </a>
-    </header>
-
+  <!-- ── Hero ── -->
+  <section class="hero">
     <div class="container">
-        <!-- PAGE CONTENT STARTS HERE -->
-        <section class="page-header">
-            <p class="eyebrow">Logic & Gate / Home</p>
-            <h1>Welcome to <span style="color:var(--primary-gold)">Tanzanite</span></h1>
-            <p style="color:var(--text-mute)">Everything you need to earn Solana.</p>
-        </section>
-        
-        <!-- (Add your specific page content here) -->
-        <!-- PAGE CONTENT ENDS HERE -->
+
+      <!-- Coin stage: halo + orbit ring + floating coin -->
+      <div class="hero-coin-stage load-in d1">
+        <div class="hero-halo"  aria-hidden="true"></div>
+        <div class="coin-orbit" aria-hidden="true"></div>
+        <span class="coin-wrap">
+          <img class="coin coin--xl"
+               src="images/coin.png"
+               alt="TAN Coin"
+               width="162" height="162"
+               aria-hidden="true">
+        </span>
+      </div>
+
+      <p class="hero-eyebrow load-in d2">Play-to-Earn &nbsp;·&nbsp; Android</p>
+
+      <h1 class="load-in d2">
+        Mine <span class="accent">Tanzanite</span>.<br>
+        Earn real Solana.
+      </h1>
+
+      <p class="lede load-in d3">
+        Tap to mine virtual gems, play mini games, build a streak, open the mystery box,
+        grow your TAN Tree and invite friends — every bit of TAN you collect converts
+        straight to a Solana wallet.
+      </p>
+
+      <div class="hero-cta load-in d4">
+        <!-- 🚀 APP LAUNCH: change href="#" to your Play Store URL and remove aria-disabled -->
+        <a href="#" class="btn" aria-disabled="true" target="_blank" rel="noopener">
+          📱 Coming soon on Google Play
+        </a>
+        <a href="support.html" class="btn btn-outline">💬 Get Support</a>
+      </div>
+
     </div>
+  </section>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop">↑</button>
+  <!-- ── Divider ── -->
+  <div class="container">
+    <div class="gold-rule">Game Features</div>
+  </div>
 
-    <!-- Bottom Navigation -->
-    <nav class="bottom-nav">
-        <a href="index.html" class="nav-item active">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
-            Home
-        </a>
-        <a href="support.html" class="nav-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.//-5.5L12 3l-8.5 3.5a8.38 8.38 0 0 1 0 11.5L12 21l8.5-3.5z"></path></svg>
-            Support
-        </a>
-        <a href="company-profile.html" class="nav-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-            Company
-        </a>
-        <!-- The "More" button to open the drawer -->
-        <div class="nav-item" id="menuToggle" style="cursor:pointer;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-            More
-        </div>
-    </nav>
+  <!-- ── Features ── -->
+  <section class="features">
+    <div class="container">
 
-    <div class="toast"></div>
-    <script src="script.js"></script>
+      <div class="section-header reveal">
+        <h2 class="section-title">Eight systems, one loop</h2>
+        <p class="section-sub">Mine, streak, mystery box, TAN tree, play, invite, return daily, withdraw. Every action feeds the next.</p>
+      </div>
+
+      <div class="feat-grid">
+
+        <article class="feat-card reveal">
+          <span class="feat-icon" aria-hidden="true">💎</span>
+          <h3>Virtual Mining</h3>
+          <p>Tap to mine Tanzanite gems and earn TAN coins. Upgrade your pickaxe for more rewards.</p>
+        </article>
+
+        <article class="feat-card reveal">
+          <span class="feat-icon" aria-hidden="true">🎮</span>
+          <h3>Mini Games</h3>
+          <p>Cave mining, word catching, and gems merging games to boost your daily TAN earnings.</p>
+        </article>
+
+        <article class="feat-card reveal">
+          <span class="feat-icon" aria-hidden="true">📅</span>
+          <h3>Daily Rewards</h3>
+          <p>Log in every day and claim your daily bonus TAN drop.</p>
+        </article>
+
+        <article class="feat-card reveal">
+          <span class="feat-icon" aria-hidden="true">🔥</span>
+          <h3>Daily Streak</h3>
+          <p>Stay active across the ecosystem to keep your streak climbing.</p>
+        </article>
+
+        <article class="feat-card reveal">
+          <span class="feat-icon" aria-hidden="true">🎁</span>
+          <h3>Mystery Box</h3>
+          <p>Stay active to unlock the mystery box — win up to 1 full TAN inside.</p>
+        </article>
+
+        <article class="feat-card reveal">
+          <span class="feat-icon" aria-hidden="true">🌳</span>
+          <h3>TAN Tree</h3>
+          <p>Grow your own Tanzanite crystal tree and harvest passive TAN rewards.</p>
+        </article>
+
+        <article class="feat-card reveal">
+          <span class="feat-icon" aria-hidden="true">👥</span>
+          <h3>Referral Program</h3>
+          <p>Invite friends with your code and earn 10% of their mining rewards — forever.</p>
+        </article>
+
+        <article class="feat-card reveal">
+          <span class="feat-icon" aria-hidden="true">🪙</span>
+          <h3>TAN → Solana</h3>
+          <p>Withdraw earned TAN directly to any Solana wallet. Minimum 1 TAN.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-coin-scene">
+        <span class="coin-wrap coin-wrap--slow">
+          <img class="coin coin--foot" src="images/coin.png" alt="" width="28" height="28" aria-hidden="true">
+        </span>
+      </div>
+      <p>© 2026 Logic &amp; Gate. All rights reserved.</p>
+      <p><a href="https://logicandgate.com" class="foot-domain" target="_blank" rel="noopener">logicandgate.com</a></p>
+      <p class="foot-links">
+        <a href="index.html">Home</a><span>|</span>
+        <a href="privacy.html">App Privacy</a><span>|</span>
+        <a href="site-privacy.html">Site Privacy</a><span>|</span>
+        <a href="support.html">Support</a><span>|</span>
+        <a href="license.html">License</a><span>|</span>
+        <a href="company-profile.html">Company</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ── Bottom Navigation ── -->
+  <nav class="bottom-nav" aria-label="Site navigation">
+
+    <a href="index.html" class="bn-item">
+      <span class="bn-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9,22 9,12 15,12 15,22"/>
+        </svg>
+      </span>
+      <span class="bn-label">Home</span>
+    </a>
+
+    <a href="privacy.html" class="bn-item">
+      <span class="bn-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </span>
+      <span class="bn-label">Privacy</span>
+    </a>
+
+    <a href="support.html" class="bn-item">
+      <span class="bn-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+      </span>
+      <span class="bn-label">Support</span>
+    </a>
+
+    <a href="license.html" class="bn-item">
+      <span class="bn-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14,2 14,8 20,8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+        </svg>
+      </span>
+      <span class="bn-label">License</span>
+    </a>
+
+    <a href="company-profile.html" class="bn-item">
+      <span class="bn-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="7" width="20" height="14" rx="2"/>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+        </svg>
+      </span>
+      <span class="bn-label">Company</span>
+    </a>
+
+  </nav>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+  <script src="script.js"></script>
 </body>
 </html>
