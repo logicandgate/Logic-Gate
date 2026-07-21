@@ -1306,3 +1306,52 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   margin: 0;
 }
 .sig-meta strong { color: var(--text); }
+
+/* ============================================================
+   ZNITE RUN — pink accent variants (additive; used by znite.html only)
+   ============================================================ */
+:root {
+  --znite:   #EC4899;
+  --znite-2: #F97BB8;
+}
+
+.accent--znite,
+.hero h1 .accent--znite {
+  background: linear-gradient(135deg, #F97BB8 0%, #EC4899 55%, #B72D74 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-eyebrow--znite {
+  color: var(--znite-2);
+  background: rgba(236,72,153,0.08);
+  border-color: rgba(236,72,153,0.20);
+}
+
+.hero-halo--znite {
+  background: radial-gradient(closest-side,
+    rgba(236,72,153,0.26) 0%,
+    rgba(139,92,246,0.10) 50%,
+    transparent 75%);
+}
+
+.coin-orbit--znite { border-color: rgba(236,72,153,0.25); }
+.coin-orbit--znite::before {
+  background: var(--znite-2);
+  box-shadow: 0 0 10px rgba(236,72,153,0.80), 0 0 20px rgba(236,72,153,0.35);
+}
+
+.coin-wrap--znite {
+  animation:
+    coinFloat 3.2s ease-in-out infinite,
+    zniteGlow 3.2s ease-in-out infinite;
+}
+
+@keyframes zniteGlow {
+  0%, 100% { filter: drop-shadow(0 8px 22px rgba(236,72,153,0.40)); }
+  50%       { filter: drop-shadow(0 14px 44px rgba(236,72,153,0.70))
+                       drop-shadow(0  0px 60px rgba(236,72,153,0.20)); }
+}
+
+.coin--znite { border-radius: 50%; }
