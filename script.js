@@ -56,30 +56,6 @@
   }
 
   /* ------------------------------------------------------------------ */
-  /* Scroll reveal                                                        */
-  /* ------------------------------------------------------------------ */
-  var revealEls = document.querySelectorAll(".reveal");
-
-  if (revealEls.length) {
-    if (reducedMotion || !("IntersectionObserver" in window)) {
-      revealEls.forEach(function (el) { el.classList.add("is-visible"); });
-    } else {
-      var io = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              io.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.10, rootMargin: "0px 0px -36px 0px" }
-      );
-      revealEls.forEach(function (el) { io.observe(el); });
-    }
-  }
-
-  /* ------------------------------------------------------------------ */
   /* Toast + copy-to-clipboard                                            */
   /* ------------------------------------------------------------------ */
   var toastEl   = document.querySelector(".toast");
