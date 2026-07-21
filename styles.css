@@ -182,15 +182,16 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 /* wrapper: float + glow */
 .coin-wrap {
   display: block;
-  animation:
-    coinFloat 3.2s ease-in-out infinite,
-    coinGlow  3.2s ease-in-out infinite;
+  /* static glow: animating drop-shadow repaints every frame and janks phones */
+  filter: drop-shadow(0 10px 30px rgba(245,183,49,0.55));
+  animation: coinFloat 3.2s ease-in-out infinite;
 }
 
-.coin-wrap--slow { animation-duration: 4.8s, 4.8s; }
+.coin-wrap--slow { animation-duration: 4.8s; }
 
 .coin-wrap--logo {
   animation: none;
+  filter: none;
   display: inline-flex;
   align-items: center;
 }
@@ -220,12 +221,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   50%       { transform: translateY(-16px) rotate( 2.0deg); }
 }
 
-@keyframes coinGlow {
-  0%, 100% { filter: drop-shadow(0 8px 22px rgba(245,183,49,0.44)); }
-  50%       { filter: drop-shadow(0 14px 44px rgba(245,183,49,0.76))
-                       drop-shadow(0  0px 60px rgba(245,183,49,0.22)); }
-}
-
 @keyframes coinFlip {
   /* idle most of the time, quick scaleX flip */
   0%,  44% { transform: scaleX(1);    }
@@ -248,6 +243,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   border-radius: 50%;
   background: radial-gradient(closest-side, rgba(245,183,49,0.26) 0%, transparent 70%);
   filter: blur(22px);
+  will-change: transform, opacity;
   animation: haloBreath 3.2s ease-in-out infinite;
   pointer-events: none;
   z-index: 0;
@@ -820,20 +816,20 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
    ============================================================ */
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity .70s var(--ease), transform .70s var(--ease);
+  transform: translateY(12px);
+  transition: opacity .45s var(--ease), transform .45s var(--ease);
 }
 .reveal.is-visible { opacity: 1; transform: none; }
 
 .load-in {
   opacity: 0;
-  transform: translateY(10px);
-  animation: rise .60s var(--ease-out) forwards;
+  transform: translateY(8px);
+  animation: rise .35s var(--ease-out) forwards;
 }
-.load-in.d1 { animation-delay: .05s; }
-.load-in.d2 { animation-delay: .15s; }
-.load-in.d3 { animation-delay: .25s; }
-.load-in.d4 { animation-delay: .38s; }
+.load-in.d1 { animation-delay: .03s; }
+.load-in.d2 { animation-delay: .08s; }
+.load-in.d3 { animation-delay: .14s; }
+.load-in.d4 { animation-delay: .20s; }
 
 @keyframes rise { to { opacity: 1; transform: none; } }
 
@@ -1058,6 +1054,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
     rgba(139,92,246,0.10) 50%,
     transparent 75%);
   filter: blur(32px);
+  will-change: transform, opacity;
   animation: haloBreath 3.2s ease-in-out infinite;
   pointer-events: none;
   z-index: 0;
@@ -1343,15 +1340,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 }
 
 .coin-wrap--znite {
-  animation:
-    coinFloat 3.2s ease-in-out infinite,
-    zniteGlow 3.2s ease-in-out infinite;
-}
-
-@keyframes zniteGlow {
-  0%, 100% { filter: drop-shadow(0 8px 22px rgba(236,72,153,0.40)); }
-  50%       { filter: drop-shadow(0 14px 44px rgba(236,72,153,0.70))
-                       drop-shadow(0  0px 60px rgba(236,72,153,0.20)); }
+  filter: drop-shadow(0 10px 30px rgba(236,72,153,0.50));
+  animation: coinFloat 3.2s ease-in-out infinite;
 }
 
 .coin--znite { border-radius: 50%; }
