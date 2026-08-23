@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.logicandget.tanzanitemining",
+      "sha256_cert_fingerprints": [
+        "C3:3D:71:63:1C:7F:03:5B:BE:24:E5:F6:14:A6:1C:6F:CD:A7:0C:83:20:23:AB:79:0D:65:79:D7:11:C8:BA:C3"
+      ]
+    }
+  }
+]
