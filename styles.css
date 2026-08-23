@@ -1369,20 +1369,36 @@ body::before {
   animation: tz-wave-out 0.80s var(--ease-out) 0.05s both;   /* reveal on load: sweep off to the left */
 }
 
+/* the Logic & Gate logo, centred, riding through the wave (brand moment) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 100001;
+  pointer-events: none;
+  background: url("site-logo.png") center / 92px 92px no-repeat;
+  filter: drop-shadow(0 0 16px rgba(0,200,255,0.55)) drop-shadow(0 0 32px rgba(139,92,246,0.45));
+  animation: tz-logo-out 0.80s var(--ease-out) 0.05s both;   /* reveal: fade the logo out with the wave */
+}
+
 @keyframes tz-wave-out  { from { transform: translateX(0); }     to { transform: translateX(-108%); } }
 @keyframes tz-wave-in-r { from { transform: translateX(108%); }  to { transform: translateX(0); } }
 @keyframes tz-wave-in-l { from { transform: translateX(-108%); } to { transform: translateX(0); } }
+@keyframes tz-logo-out  { 0% { opacity: 1; transform: scale(1); }  100% { opacity: 0; transform: scale(1.08); } }
+@keyframes tz-logo-in   { 0% { opacity: 0; transform: scale(.9); } 100% { opacity: 1; transform: scale(1); } }
 
-/* link-click cover — enters from the side JS picked (default: right) */
+/* link-click cover — wave enters from the side JS picked (default: right); logo fades in */
 body.tz-leaving::before          { --tz-edge: 0%;   animation: tz-wave-in-r 0.5s var(--ease) both; }
 body.tz-leaving.tz-from-left::before { --tz-edge: 100%; animation: tz-wave-in-l 0.5s var(--ease) both; }
+body.tz-leaving::after           { animation: tz-logo-in 0.5s var(--ease) both; }
 
-/* accessibility: reduced motion = quick fade, no sweep */
+/* accessibility: reduced motion = quick fade, no sweep or logo motion */
 @media (prefers-reduced-motion: reduce) {
   body::before {
     transform: none;
     animation: tz-fade-out 0.3s linear 0.05s both;
   }
+  body::after { display: none; }
   body.tz-leaving::before,
   body.tz-leaving.tz-from-left::before {
     transform: none;
@@ -1435,17 +1451,14 @@ body.tz-leaving.tz-from-left::before { --tz-edge: 100%; animation: tz-wave-in-l 
   background:radial-gradient(circle,#bfe9ff,rgba(0,200,255,.5) 40%,transparent 70%);
   opacity:0; animation:lg-float 6s ease-in-out infinite; }
 
-/* Tanzanite crystal */
-.lg-intro-crystal{ width:96px; height:128px; position:relative;
-  background:linear-gradient(155deg,#9BEBFF 0%,#00C8FF 38%,#7A4CFF 100%);
-  clip-path:polygon(50% 0,100% 33%,80% 100%,20% 100%,0 33%);
+/* Logic & Gate logo "crystal" (site-logo.png — the site's own badge). */
+.lg-intro-crystal{ width:124px; height:124px; position:relative;
+  background:url("site-logo.png") center / contain no-repeat;
   filter:drop-shadow(0 0 16px rgba(0,200,255,.55)) drop-shadow(0 0 34px rgba(139,92,246,.5));
   animation:lg-crystal-float 3.4s ease-in-out infinite; }
-.lg-intro-crystal::before{ content:""; position:absolute; inset:0;
-  clip-path:polygon(50% 0,62% 33%,50% 100%,38% 33%);
-  background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,0)); mix-blend-mode:screen; }
-.lg-intro-crystal.lg-bright{ filter:drop-shadow(0 0 26px rgba(0,200,255,.9)) drop-shadow(0 0 50px rgba(139,92,246,.75)); }
-.lg-intro-crystal.lg-small{ width:64px; height:86px; }
+.lg-intro-crystal::before{ display:none; }
+.lg-intro-crystal.lg-bright{ filter:drop-shadow(0 0 26px rgba(0,200,255,.9)) drop-shadow(0 0 52px rgba(139,92,246,.75)); }
+.lg-intro-crystal.lg-small{ width:88px; height:88px; }
 
 /* energy rings */
 .lg-intro-ring{ position:absolute; width:184px; height:184px; border-radius:50%;
@@ -1509,7 +1522,7 @@ body.tz-leaving.tz-from-left::before { --tz-edge: 100%; animation: tz-wave-in-l 
 
 /* mobile: fewer particles, tighter layout */
 @media (max-width:560px){
-  .lg-intro-crystal{ width:80px; height:106px; }
+  .lg-intro-crystal{ width:100px; height:100px; }
   .lg-intro-ring{ width:152px; height:152px; }
   .lg-intro-p:nth-child(n+9){ display:none; }
   .lg-intro-journey{ gap:2px; }
