@@ -1423,3 +1423,136 @@ body.tz-leaving::after  { animation: tz-core-pulse 1.2s ease-in-out infinite, tz
   @keyframes tz-fade-out { to   { opacity: 0; } }
   @keyframes tz-fade-in  { from { opacity: 0; } to { opacity: 1; } }
 }
+
+/* ================================================================= *
+ * LOGIC & GATE — FIRST-VISIT CINEMATIC INTRO (homepage only)         *
+ * Injected by script.js on first visit; unique .lg-intro-* names so  *
+ * nothing here touches the existing site. Palette from site tokens.  *
+ * GPU-friendly: only opacity / transform / filter animate.           *
+ * ================================================================= */
+.lg-intro{
+  position:fixed; inset:0; z-index:200000;
+  display:grid; place-items:center; overflow:hidden;
+  background:
+    radial-gradient(60% 60% at 50% 44%, rgba(139,92,246,0.16), transparent 60%),
+    radial-gradient(95% 95% at 50% 55%, #0E0B1E 0%, #050409 78%);
+  color:#EDE9FF; font-family:var(--font-body);
+  opacity:1; transition:opacity .6s var(--ease-out);
+}
+.lg-intro.lg-hide{ opacity:0; pointer-events:none; }
+
+.lg-intro-skip{
+  position:absolute; top:16px; right:16px; z-index:3;
+  padding:8px 14px; font:600 12px/1 var(--font-body); letter-spacing:.04em;
+  color:#cfe8ff; background:rgba(255,255,255,.06);
+  border:1px solid rgba(139,92,246,.35); border-radius:999px; cursor:pointer;
+  -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+  transition:background .2s, transform .2s;
+}
+.lg-intro-skip:hover,.lg-intro-skip:focus-visible{ background:rgba(139,92,246,.20); transform:translateY(-1px); outline:none; }
+
+.lg-intro-stage{ position:relative; width:min(92vw,760px); height:min(78vh,540px); display:grid; place-items:center; z-index:2; }
+
+.lg-intro-scene{
+  position:absolute; inset:0; display:grid; place-items:center; align-content:center; gap:14px;
+  text-align:center; padding:0 18px;
+  opacity:0; visibility:hidden; transform:translateY(6px) scale(.985);
+  transition:opacity .55s var(--ease-out), transform .55s var(--ease-out), visibility 0s linear .55s;
+}
+.lg-intro-scene.is-active{ opacity:1; visibility:visible; transform:none; transition-delay:0s; }
+
+/* floating particles */
+.lg-intro-particles{ position:absolute; inset:0; pointer-events:none; z-index:1; }
+.lg-intro-p{ position:absolute; width:4px; height:4px; border-radius:50%;
+  background:radial-gradient(circle,#bfe9ff,rgba(0,200,255,.5) 40%,transparent 70%);
+  opacity:0; animation:lg-float 6s ease-in-out infinite; }
+
+/* Tanzanite crystal */
+.lg-intro-crystal{ width:96px; height:128px; position:relative;
+  background:linear-gradient(155deg,#9BEBFF 0%,#00C8FF 38%,#7A4CFF 100%);
+  clip-path:polygon(50% 0,100% 33%,80% 100%,20% 100%,0 33%);
+  filter:drop-shadow(0 0 16px rgba(0,200,255,.55)) drop-shadow(0 0 34px rgba(139,92,246,.5));
+  animation:lg-crystal-float 3.4s ease-in-out infinite; }
+.lg-intro-crystal::before{ content:""; position:absolute; inset:0;
+  clip-path:polygon(50% 0,62% 33%,50% 100%,38% 33%);
+  background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,0)); mix-blend-mode:screen; }
+.lg-intro-crystal.lg-bright{ filter:drop-shadow(0 0 26px rgba(0,200,255,.9)) drop-shadow(0 0 50px rgba(139,92,246,.75)); }
+.lg-intro-crystal.lg-small{ width:64px; height:86px; }
+
+/* energy rings */
+.lg-intro-ring{ position:absolute; width:184px; height:184px; border-radius:50%;
+  border:1px solid rgba(0,200,255,.4); box-shadow:0 0 24px rgba(139,92,246,.25);
+  animation:lg-ring 2.4s ease-out infinite; }
+.lg-intro-ring.lg-ring2{ border-color:rgba(139,92,246,.4); animation-delay:.7s; }
+
+/* logo + tagline */
+.lg-intro-logo{ font-family:var(--font-display); font-weight:700; font-size:clamp(30px,7vw,58px);
+  letter-spacing:.02em; color:#fff; text-shadow:0 0 22px rgba(0,200,255,.35); margin:0; }
+.lg-intro-logo .amp{ color:var(--gold); }
+.lg-intro-tag,.lg-intro-sub{ color:#a9b4dd; font-size:clamp(12px,2.6vw,15px); margin:0; }
+
+/* journey */
+.lg-intro-journey{ display:flex; align-items:center; justify-content:center; gap:6px; flex-wrap:wrap; }
+.lg-intro-node{ display:flex; flex-direction:column; align-items:center; gap:7px; min-width:64px; }
+.lg-node-ico{ width:46px; height:46px; display:grid; place-items:center; border-radius:14px;
+  background:rgba(139,92,246,.12); border:1px solid rgba(0,200,255,.30);
+  color:#8FE6FF; box-shadow:0 0 18px rgba(0,200,255,.22); }
+.lg-node-ico svg{ width:22px; height:22px; }
+.lg-intro-node b{ font:700 11px/1 var(--font-display); letter-spacing:.08em; text-transform:uppercase; color:#cdd6f5; }
+.lg-intro-line{ width:22px; height:2px; border-radius:2px;
+  background:linear-gradient(90deg,rgba(0,200,255,.7),rgba(139,92,246,.7)); box-shadow:0 0 10px rgba(0,200,255,.4); }
+
+/* community */
+.lg-intro-net{ position:relative; width:210px; height:118px; margin-bottom:4px; }
+.lg-intro-net i{ position:absolute; width:11px; height:11px; border-radius:50%;
+  background:radial-gradient(circle,#e6f6ff,rgba(0,200,255,.55) 45%,transparent 72%);
+  box-shadow:0 0 12px rgba(0,200,255,.5); animation:lg-twinkle 2.6s ease-in-out infinite; }
+.lg-intro-h{ font-family:var(--font-display); font-size:clamp(20px,5vw,32px); margin:0; color:#fff; }
+
+/* welcome + CTA */
+.lg-intro-welcome{ font-family:var(--font-display); font-size:clamp(22px,5.5vw,40px); margin:6px 0 0; color:#fff; text-shadow:0 0 22px rgba(0,200,255,.35); }
+.lg-intro-enter{ margin-top:10px; padding:13px 28px; cursor:pointer;
+  font:700 15px/1 var(--font-display); letter-spacing:.03em; color:#07050F;
+  background:linear-gradient(135deg,#7FE3FF,#00C8FF 55%,#8B5CF6); border:0; border-radius:999px;
+  box-shadow:0 8px 26px rgba(0,200,255,.35), inset 0 0 0 1px rgba(255,255,255,.15);
+  transition:transform .2s, box-shadow .2s; }
+.lg-intro-enter:hover,.lg-intro-enter:focus-visible{ transform:translateY(-2px); box-shadow:0 12px 34px rgba(139,92,246,.45); outline:none; }
+
+/* keyframes */
+@keyframes lg-float{ 0%{opacity:0; transform:translateY(12px) scale(.5)} 20%{opacity:.9} 80%{opacity:.65} 100%{opacity:0; transform:translateY(-26px) scale(1)} }
+@keyframes lg-crystal-float{ 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-8px) rotate(2deg)} }
+@keyframes lg-ring{ 0%{transform:scale(.55); opacity:0} 30%{opacity:.8} 100%{transform:scale(1.5); opacity:0} }
+@keyframes lg-twinkle{ 0%,100%{opacity:.45; transform:scale(.85)} 50%{opacity:1; transform:scale(1.15)} }
+
+/* scene-entrance flourishes */
+.lg-s1.is-active .lg-intro-crystal{ animation:lg-crystal-in .9s var(--ease-out) both, lg-crystal-float 3.4s ease-in-out 1s infinite; }
+@keyframes lg-crystal-in{ 0%{opacity:0; transform:scale(.2); filter:brightness(2.2) drop-shadow(0 0 40px #00C8FF)} 100%{opacity:1; transform:scale(1)} }
+.lg-s3.is-active .lg-intro-logo{ animation:lg-rise .8s var(--ease-out) both; }
+.lg-s3.is-active .lg-intro-tag{ animation:lg-rise .8s var(--ease-out) .25s both; }
+@keyframes lg-rise{ 0%{opacity:0; transform:translateY(14px) scale(.96); letter-spacing:.22em} 100%{opacity:1; transform:none} }
+.lg-s4.is-active .lg-intro-node{ animation:lg-pop .5s var(--ease-bounce) both; }
+.lg-s4.is-active .lg-intro-node:nth-child(3){ animation-delay:.12s }
+.lg-s4.is-active .lg-intro-node:nth-child(5){ animation-delay:.24s }
+.lg-s4.is-active .lg-intro-node:nth-child(7){ animation-delay:.36s }
+.lg-s4.is-active .lg-intro-line{ animation:lg-line .45s ease both; }
+@keyframes lg-pop{ 0%{opacity:0; transform:translateY(10px) scale(.8)} 100%{opacity:1; transform:none} }
+@keyframes lg-line{ 0%{opacity:0; transform:scaleX(0)} 100%{opacity:1; transform:none} }
+.lg-s6.is-active .lg-intro-enter{ animation:lg-pop .5s var(--ease-bounce) .2s both; }
+
+/* mobile: fewer particles, tighter layout */
+@media (max-width:560px){
+  .lg-intro-crystal{ width:80px; height:106px; }
+  .lg-intro-ring{ width:152px; height:152px; }
+  .lg-intro-p:nth-child(n+9){ display:none; }
+  .lg-intro-journey{ gap:2px; }
+  .lg-intro-node{ min-width:54px; }
+  .lg-node-ico{ width:40px; height:40px; }
+}
+
+/* accessibility: reduced motion = simple fades, no particles/float */
+@media (prefers-reduced-motion: reduce){
+  .lg-intro-particles,.lg-intro-ring{ display:none; }
+  .lg-intro *{ animation:none !important; }
+  .lg-intro-scene{ transition:opacity .3s linear; transform:none; }
+  .lg-intro-crystal{ filter:drop-shadow(0 0 18px rgba(0,200,255,.6)); }
+}
