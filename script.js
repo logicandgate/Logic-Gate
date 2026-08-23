@@ -99,4 +99,65 @@
     });
   });
 
+  /* ------------------------------------------------------------------ */
+  /* Tanzanite morph page transition                                     */
+  /* Intercept internal link clicks -> morph the cover in -> navigate.   */
+  /* The destination page's CSS auto-plays the reveal on arrival.        */
+  /* ------------------------------------------------------------------ */
+  (function pageTransition() {
+    var leaving = false;
+    var ORIGIN  = window.location.origin;
+
+    function targetUrl(a) {
+      if (!a) return null;
+      var href = a.getAttribute("href") || "";
+      if (!href || href.charAt(0) === "#") return null;                 // in-page anchor
+      if (a.target === "_blank" || a.hasAttribute("download")) return null;
+      if (/^(mailto:|tel:|sms:|javascript:)/i.test(href)) return null;
+      if ((a.getAttribute("rel") || "").match(/external/i)) return null;
+      var url;
+      try { url = new URL(a.href, window.location.href); } catch (e) { return null; }
+      if (url.origin !== ORIGIN) return null;                           // external site
+      if (url.href === window.location.href) return null;               // same page
+      if (url.pathname === window.location.pathname && url.hash) return null;
+      return url;
+    }
+
+    document.addEventListener("click", function (e) {
+      if (e.defaultPrevented || e.button !== 0 ||
+          e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      var a = e.target.closest ? e.target.closest("a") : null;
+      var url = targetUrl(a);
+      if (!url) return;                    // external / download / anchor -> behave normally
+      e.preventDefault();
+      if (leaving) return;                 // ignore double-clicks during a transition
+      leaving = true;
+
+      // Warm the destination in cache (static pages are tiny; failure is harmless).
+      try { fetch(url.href, { credentials: "same-origin" }).catch(function () {}); } catch (_) {}
+
+      document.body.classList.add("tz-leaving");
+      document.documentElement.style.overflow = "hidden";
+
+      var wait = reducedMotion ? 180 : 520;               // ~= tz-cover duration
+      setTimeout(function () { window.location.assign(url.href); }, wait);
+
+      // Safety net: never trap the user if navigation stalls.
+      setTimeout(function () {
+        document.body.classList.remove("tz-leaving");
+        document.documentElement.style.overflow = "";
+        leaving = false;
+      }, 4000);
+    }, false);
+
+    // Restored from the back/forward (bfcache) — make sure nothing stays covering.
+    window.addEventListener("pageshow", function (ev) {
+      if (ev.persisted) {
+        document.body.classList.remove("tz-leaving");
+        document.documentElement.style.overflow = "";
+        leaving = false;
+      }
+    });
+  })();
+
 })();
