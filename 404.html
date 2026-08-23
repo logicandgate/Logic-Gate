@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tanzanite Mining</title>
+  <script>
+    // Referral links (/ref/<code>): users who already have the app are
+    // intercepted by Android App Links and never reach this page. Everyone else
+    // lands here -> send them to the Play Store carrying the code as the install
+    // referrer, so it's applied automatically after they install.
+    (function () {
+      var m = (location.pathname || '').match(/^\/ref\/([^\/?#]+)/);
+      if (m && m[1]) {
+        location.replace(
+          'https://play.google.com/store/apps/details?id=com.logicandget.tanzanitemining&referrer='
+          + encodeURIComponent(decodeURIComponent(m[1])));
+      }
+    })();
+  </script>
+  <style>
+    body{background:#0A0E21;color:#fff;font-family:system-ui,-apple-system,sans-serif;text-align:center;padding:48px 20px}
+    a{color:#00BFFF;text-decoration:none}
+    .muted{color:#8a90a6}
+  </style>
+</head>
+<body>
+  <h1>Tanzanite Mining</h1>
+  <p>Page not found.</p>
+  <p><a href="https://play.google.com/store/apps/details?id=com.logicandget.tanzanitemining">Get it on Google Play</a></p>
+  <p class="muted"><a class="muted" href="https://logicandgate.com/">Back to homepage</a></p>
+</body>
+</html>
