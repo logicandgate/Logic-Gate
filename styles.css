@@ -1343,69 +1343,77 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .coin--znite { border-radius: 50%; }
 
 /* ================================================================= *
- * TANZANITE WAVE TRANSITION  (added 2026-08-23)                      *
- * Directional liquid light-sweep between pages + entry reveal.      *
- *  - transform-only (no clip-path / backdrop-filter) => no jank;    *
- *    fixes the back-button buffering of the old morph.              *
- *  - Flash-free (painted via body::before from the <head> sheet).   *
- *  - No-JS safe: the reveal auto-plays, so a page is never stuck.   *
- *  - Direction: JS reads where you clicked — a right-side link      *
- *    sweeps from the right, a left-side link from the left.         *
+ * BLUR OVER-SLIDE TRANSITION  (added 2026-08-23)                     *
+ * Leaving a page: blur it, an overlay slides up over it, and a       *
+ * centre circle fills bottom->top with the site name beneath it.     *
+ * Arriving: the overlay slides up and away to reveal the new page.   *
+ *  - Blur only on the OUTGOING cover (keeps the back button smooth). *
+ *  - Flash-free (body::before is up before content paints).          *
+ *  - No-JS safe: the reveal auto-plays, so a page is never stuck.    *
+ *  - Circle + name live in a JS-injected .pt-fx (shown on click).    *
  * ================================================================= */
 
-/* the wave panel — a glowing Tanzanite wall that slides across */
+/* base cover — a solid tint that slides up to reveal (arrival). No blur
+   here, so the back/forward button never pays the blur cost. */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: 100000;
   pointer-events: none;
-  --tz-edge: 0%;                                   /* which edge glows (leading) */
-  background:
-    radial-gradient(55% 100% at var(--tz-edge) 50%, rgba(0,200,255,0.30), rgba(139,92,246,0.18) 30%, transparent 58%),
-    linear-gradient(100deg, #0E0B1E 0%, #15122A 55%, #1B1735 100%);
-  transform: translateX(0);
+  background: rgba(7, 5, 15, 0.94);
+  transform: translateY(0);
   will-change: transform;
-  animation: tz-wave-out 0.80s var(--ease-out) 0.05s both;   /* reveal on load: sweep off to the left */
+  animation: pt-reveal 0.6s var(--ease-out) 0.05s both;
+}
+@keyframes pt-reveal { from { transform: translateY(0); }    to { transform: translateY(-101%); } }
+@keyframes pt-cover  { from { transform: translateY(101%); } to { transform: translateY(0); } }
+
+/* leaving (JS adds .tz-leaving) — slide up over + blur the page you leave */
+body.tz-leaving::before {
+  -webkit-backdrop-filter: blur(9px) saturate(1.05);
+          backdrop-filter: blur(9px) saturate(1.05);
+  animation: pt-cover 0.5s var(--ease) both;
 }
 
-/* the Logic & Gate logo, centred, riding through the wave (brand moment) */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 100001;
-  pointer-events: none;
-  background: url("site-logo.png") center / 92px 92px no-repeat;
-  filter: drop-shadow(0 0 16px rgba(0,200,255,0.55)) drop-shadow(0 0 32px rgba(139,92,246,0.45));
-  animation: tz-logo-out 0.80s var(--ease-out) 0.05s both;   /* reveal: fade the logo out with the wave */
+/* circle-fill loader + site name (JS injects .pt-fx, shows it on click) */
+.pt-fx {
+  position: fixed; inset: 0; z-index: 100001; pointer-events: none;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
+  opacity: 0;
 }
+.pt-fx.pt-on { opacity: 1; transition: opacity 0.25s ease 0.08s; }
+.pt-circle {
+  width: 74px; height: 74px; border-radius: 50%; position: relative; overflow: hidden;
+  border: 2px solid rgba(0, 200, 255, 0.55);
+  box-shadow: 0 0 24px rgba(0, 200, 255, 0.35), inset 0 0 16px rgba(139, 92, 246, 0.28);
+  background: rgba(139, 92, 246, 0.10);
+}
+.pt-circle::after {                         /* the fill that rises bottom -> top */
+  content: ""; position: absolute; left: -2px; right: -2px; bottom: 0; height: 0;
+  background: linear-gradient(180deg, #7FE3FF, #00C8FF 50%, #8B5CF6);
+  box-shadow: 0 0 18px rgba(0, 200, 255, 0.6);
+}
+.pt-fx.pt-on .pt-circle::after { animation: pt-fill 0.6s var(--ease-out) 0.12s forwards; }
+@keyframes pt-fill { from { height: 0; } to { height: 100%; } }
+.pt-name {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(15px, 4vw, 22px); letter-spacing: 0.08em;
+  color: #EDE9FF; text-shadow: 0 0 18px rgba(0, 200, 255, 0.4);
+}
+.pt-name .amp { color: var(--gold); }
 
-@keyframes tz-wave-out  { from { transform: translateX(0); }     to { transform: translateX(-108%); } }
-@keyframes tz-wave-in-r { from { transform: translateX(108%); }  to { transform: translateX(0); } }
-@keyframes tz-wave-in-l { from { transform: translateX(-108%); } to { transform: translateX(0); } }
-@keyframes tz-logo-out  { 0% { opacity: 1; transform: scale(1); }  100% { opacity: 0; transform: scale(1.08); } }
-@keyframes tz-logo-in   { 0% { opacity: 0; transform: scale(.9); } 100% { opacity: 1; transform: scale(1); } }
-
-/* link-click cover — wave enters from the side JS picked (default: right); logo fades in */
-body.tz-leaving::before          { --tz-edge: 0%;   animation: tz-wave-in-r 0.5s var(--ease) both; }
-body.tz-leaving.tz-from-left::before { --tz-edge: 100%; animation: tz-wave-in-l 0.5s var(--ease) both; }
-body.tz-leaving::after           { animation: tz-logo-in 0.5s var(--ease) both; }
-
-/* accessibility: reduced motion = quick fade, no sweep or logo motion */
+/* accessibility: reduced motion = quick fade, no slide/blur, filled circle */
 @media (prefers-reduced-motion: reduce) {
-  body::before {
-    transform: none;
-    animation: tz-fade-out 0.3s linear 0.05s both;
+  body::before { transform: none; animation: pt-fade-out 0.3s linear 0.05s both; }
+  body.tz-leaving::before {
+    -webkit-backdrop-filter: none; backdrop-filter: none;
+    transform: none; animation: pt-fade-in 0.22s linear both;
   }
-  body::after { display: none; }
-  body.tz-leaving::before,
-  body.tz-leaving.tz-from-left::before {
-    transform: none;
-    animation: tz-fade-in 0.22s linear both;
-  }
-  @keyframes tz-fade-out { from { opacity: 1; } to { opacity: 0; } }
-  @keyframes tz-fade-in  { from { opacity: 0; } to { opacity: 1; } }
+  .pt-fx.pt-on { transition: none; }
+  .pt-circle::after { animation: none !important; height: 100% !important; }
+  @keyframes pt-fade-out { from { opacity: 1; } to { opacity: 0; } }
+  @keyframes pt-fade-in  { from { opacity: 0; } to { opacity: 1; } }
 }
 
 /* ================================================================= *
