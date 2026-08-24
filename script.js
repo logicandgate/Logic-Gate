@@ -108,6 +108,14 @@
     var leaving = false;
     var ORIGIN  = window.location.origin;
 
+    // Circle-fill loader + site name, shown centred while leaving a page.
+    var fx = document.createElement("div");
+    fx.className = "pt-fx";
+    fx.setAttribute("aria-hidden", "true");
+    fx.innerHTML = '<div class="pt-circle"></div>' +
+                   '<div class="pt-name">Logic <span class="amp">&amp;</span> Gate</div>';
+    document.body.appendChild(fx);
+
     function targetUrl(a) {
       if (!a) return null;
       var href = a.getAttribute("href") || "";
@@ -136,13 +144,8 @@
       // Warm the destination in cache (static pages are tiny; failure is harmless).
       try { fetch(url.href, { credentials: "same-origin" }).catch(function () {}); } catch (_) {}
 
-      // Wave direction from where you clicked: right-side link -> sweep from the
-      // right (default); left-side link -> sweep from the left.
-      var cx = (typeof e.clientX === "number" && e.clientX)
-             ? e.clientX
-             : (a.getBoundingClientRect().left + a.offsetWidth / 2);
-      document.body.classList.toggle("tz-from-left", cx < window.innerWidth / 2);
-      document.body.classList.add("tz-leaving");
+      document.body.classList.add("tz-leaving");   // blur + slide the overlay over
+      fx.classList.add("pt-on");                    // circle fills bottom->top + name
       document.documentElement.style.overflow = "hidden";
 
       var wait = reducedMotion ? 180 : 520;               // ~= tz-cover duration
@@ -150,7 +153,8 @@
 
       // Safety net: never trap the user if navigation stalls.
       setTimeout(function () {
-        document.body.classList.remove("tz-leaving", "tz-from-left");
+        document.body.classList.remove("tz-leaving");
+        fx.classList.remove("pt-on");
         document.documentElement.style.overflow = "";
         leaving = false;
       }, 4000);
@@ -159,7 +163,8 @@
     // Restored from the back/forward (bfcache) — make sure nothing stays covering.
     window.addEventListener("pageshow", function (ev) {
       if (ev.persisted) {
-        document.body.classList.remove("tz-leaving", "tz-from-left");
+        document.body.classList.remove("tz-leaving");
+        fx.classList.remove("pt-on");
         document.documentElement.style.overflow = "";
         leaving = false;
       }
@@ -170,7 +175,8 @@
 
 /* ================================================================= *
  * LOGIC & GATE — first-visit cinematic intro (homepage only).        *
- * Injected on the first homepage visit; flag stored in localStorage. *
+ * Plays on the first homepage visit of each browser session (sessionStorage *
+ * clears on tab/browser close, so it replays on the next fresh visit).      *
  * Skip / Enter both dismiss it and reveal the homepage underneath.   *
  * Separate from the page-transition system (does not compete).       *
  * ================================================================= */
@@ -183,8 +189,9 @@
   var page = location.pathname.split("/").pop();
   if (page !== "" && page !== "index.html") return;
 
-  /* Play once ever (if storage is blocked, just once per load). */
-  try { if (localStorage.getItem(KEY)) return; } catch (e) {}
+  /* Play once per browser session. sessionStorage clears when the tab/browser
+     closes -> replays on the next fresh visit, but not on same-session nav. */
+  try { if (sessionStorage.getItem(KEY)) return; } catch (e) {}
 
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -263,7 +270,7 @@
     if (done) return;
     done = true;
     for (var t = 0; t < timers.length; t++) clearTimeout(timers[t]);
-    try { localStorage.setItem(KEY, "1"); } catch (e) {}
+    try { sessionStorage.setItem(KEY, "1"); } catch (e) {}
     root.classList.add("lg-hide");
     document.documentElement.style.overflow = "";
     setTimeout(function () { if (root.parentNode) root.parentNode.removeChild(root); }, 700);
