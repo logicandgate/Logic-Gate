@@ -1,11 +1,15 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "com.logicandget.tanzanitemining",
       "sha256_cert_fingerprints": [
-        "C3:3D:71:63:1C:7F:03:5B:BE:24:E5:F6:14:A6:1C:6F:CD:A7:0C:83:20:23:AB:79:0D:65:79:D7:11:C8:BA:C3"
+        "C3:3D:71:63:1C:7F:03:5B:BE:24:E5:F6:14:A6:1C:6F:CD:A7:0C:83:20:23:AB:79:0D:65:79:D7:11:C8:BA:C3",
+        "BB:13:A5:E2:6D:35:B6:F1:C8:22:1D:4F:CC:19:47:08:C4:17:CC:42:34:7E:4F:B4:E9:75:1F:03:D6:1A:AF:7A"
       ]
     }
   }
