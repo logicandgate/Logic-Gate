@@ -1612,6 +1612,21 @@ body.tz-leaving::before {
   box-shadow: 0 20px 60px rgba(0, 0, 0, .6);
 }
 
+.shot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+.shot-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .5);
+}
+
 .legal h3 { margin-top: 18px; }
 .legal ul { padding-left: 20px; }
 .legal li { margin-bottom: 8px; }
