@@ -17,6 +17,8 @@
 - [Website Privacy Policy](https://logicandgate.com/site-privacy.html): the website collects no personal data, uses no cookies or tracking
 - [Dreadhush Privacy Policy](https://logicandgate.com/dreadhush-privacy.html): privacy policy for the Dreadhush Android game
 - [Dreadhush Data Deletion](https://logicandgate.com/dreadhush-delete-data.html): how to delete Dreadhush data
+- [Duskthorn Privacy Policy](https://logicandgate.com/duskthorn-privacy.html): privacy policy for the Duskthorn: The Asylum Android game
+- [Duskthorn Data Deletion](https://logicandgate.com/duskthorn-delete-data.html): how to delete Duskthorn data
 - [Music Copyright & Licence](https://logicandgate.com/music-licence.html): ownership of original music and sound effects
 - [Support](https://logicandgate.com/support.html): email support, FAQ, community links
 
