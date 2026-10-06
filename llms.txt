@@ -26,3 +26,13 @@
 
 - [Dreadhush: House of Silence](https://logicandgate.com/dreadhush.html): first-person survival horror for Android, out now on [Google Play](https://play.google.com/store/apps/details?id=com.logicandgate.dreadhushproject)
 - [Duskthorn: The Asylum](https://logicandgate.com/duskthorn.html): first-person horror for Android, in development
+- [Tanzanite Mining](https://logicandgate.com/tm.html): casual mobile mining simulation for Android, on [Google Play](https://play.google.com/store/apps/details?id=com.logicandget.tanzanitemining)
+- [Znite Run](https://logicandgate.com/znite.html): endless runner game for Android, on [Google Play](https://play.google.com/store/apps/details?id=com.logicandgate.zniterun)
+
+## Tanzanite Mining and Znite Run legal and support
+
+- [Tanzanite Mining Privacy Policy](https://logicandgate.com/privacy.html)
+- [Tanzanite Mining Support](https://logicandgate.com/tm-support.html)
+- [Tanzanite Mining Account Deletion](https://logicandgate.com/tm-delete-account.html)
+- [Znite Run Privacy Policy](https://logicandgate.com/znite-privacy.html)
+- [Znite Run Account Deletion](https://logicandgate.com/znite-delete-account.html)
