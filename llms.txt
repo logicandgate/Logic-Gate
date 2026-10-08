@@ -25,7 +25,7 @@
 ## Games
 
 - [Dreadhush: House of Silence](https://logicandgate.com/dreadhush.html): first-person survival horror for Android, out now on [Google Play](https://play.google.com/store/apps/details?id=com.logicandgate.dreadhushproject)
-- [Duskthorn: The Asylum](https://logicandgate.com/duskthorn.html): first-person horror for Android, in development
+- [Duskthorn: The Asylum](https://logicandgate.com/duskthorn.html): first-person horror for Android, out now on Google Play (https://play.google.com/store/apps/details?id=com.logicandgate.duskthorn)
 - [Tanzanite Mining](https://logicandgate.com/tm.html): casual mobile mining simulation for Android, on [Google Play](https://play.google.com/store/apps/details?id=com.logicandget.tanzanitemining)
 - [Znite Run](https://logicandgate.com/znite.html): endless runner game for Android, on [Google Play](https://play.google.com/store/apps/details?id=com.logicandgate.zniterun)
 
