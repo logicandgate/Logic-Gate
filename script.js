@@ -4,6 +4,15 @@
 
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* Footer copyright: 2026, or 2026–<this year> once a new one has begun. */
+  (function copyrightYear() {
+    var year = new Date().getFullYear();
+    if (year <= 2026) return;
+    document.querySelectorAll(".site-footer p").forEach(function (p) {
+      if (p.firstChild && p.firstChild.nodeType === 3) p.firstChild.nodeValue = p.firstChild.nodeValue.replace("\u00A9 2026", "\u00A9 2026\u2013" + year);
+    });
+  })();
+
   /* ------------------------------------------------------------------ */
   /* Active nav link — works for both bottom-nav and desktop .desk-nav   */
   /* ------------------------------------------------------------------ */
