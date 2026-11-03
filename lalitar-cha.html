@@ -2,158 +2,395 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#07101b">
-  <meta name="description" content="Lalitar Cha: Last Order is a Bengali village horror game in development for Android. Run a roadside tea stall through four days, then face the last order on Amavasya.">
-  <title>Lalitar Cha: Last Order — Bengali Horror for Android | Logic &amp; Gate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F3A96B">
+  <title>Lalitar Cha: Last Order (ললিতার চা), Bengali village horror game for Android | Logic &amp; Gate</title>
+  <meta name="description" content="Lalitar Cha: Last Order (ললিতার চা) is a first-person Bengali village horror game for Android by Logic &amp; Gate, in development. Run a roadside tea stall for four days, through Bhoot Chaturdashi and Amavasya.">
   <link rel="canonical" href="https://logicandgate.com/lalitar-cha.html">
-  <meta property="og:title" content="Lalitar Cha: Last Order — Logic &amp; Gate">
-  <meta property="og:description" content="A roadside tea stall. Four days in a Bengali village. One woman who keeps coming back after dark.">
+  <meta property="og:title" content="Lalitar Cha: Last Order">
+  <meta property="og:description" content="Four days at a Bengali roadside tea stall. Some customers never stop coming back.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://logicandgate.com/lalitar-cha.html">
   <meta property="og:site_name" content="Logic &amp; Gate">
   <meta property="og:image" content="https://logicandgate.com/lalitar-cha-banner.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Lalitar Cha: Last Order — Logic &amp; Gate">
-  <meta name="twitter:description" content="A roadside tea stall. Four days in a Bengali village. One woman who keeps coming back after dark.">
+  <meta name="twitter:title" content="Lalitar Cha: Last Order">
+  <meta name="twitter:description" content="Four days at a Bengali roadside tea stall. Some customers never stop coming back.">
   <meta name="twitter:image" content="https://logicandgate.com/lalitar-cha-banner.png">
   <link rel="icon" type="image/png" href="site-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=DM+Sans:wght@400;500;600&family=Space+Mono:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=DM+Sans:wght@400;500;600&family=Space+Mono:wght@400&display=swap" rel="stylesheet"></noscript>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    .lalitar-page { --lalitar-red:#e3322b; --lalitar-amber:#f5ad4a; }
-    .lalitar-page .hero-eyebrow { color:var(--lalitar-amber); border-color:#f5ad4a44; background:#f5ad4a12; }
-    .lalitar-page .hero h1 .accent--lalitar { background:linear-gradient(135deg,#ffca68 5%,#ee632f 55%,#d92728 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
-    .lalitar-mark { width:76px; height:76px; display:block; margin:0 auto 14px; border:1px solid #e3322b; border-radius:50%; box-shadow:0 0 28px #e3322b44; }
-    .lalitar-page .dh-banner { border:1px solid #e36a3d66; box-shadow:0 20px 60px #0009,0 0 26px #e3322b20; }
-    .lalitar-page .gold-rule::before { background:linear-gradient(90deg,transparent,#e3322b88); }
-    .lalitar-page .gold-rule::after { background:linear-gradient(270deg,transparent,#f5ad4a88); }
-    .lalitar-page .feat-card { border-color:#e36a3d35; background:linear-gradient(145deg,#111d2a,#11131b 72%,#21130f); }
-    .lalitar-page .feat-card:hover { border-color:#f5ad4a99; box-shadow:0 8px 28px -10px #e3322b66; }
-    .lalitar-page .feat-icon { color:var(--lalitar-amber); }
-    .lalitar-page .section-title::after { background:linear-gradient(90deg,#f5ad4a,#e3322b); }
-    .lalitar-page .btn { background:linear-gradient(135deg,#f6b24e,#d94a2c); color:#160e0c; }
-    .lalitar-page .btn-outline { background:transparent; color:var(--text-2); border-color:#e36a3d55; }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Galada&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "VideoGame",
-    "name": "Lalitar Cha: Last Order",
-    "url": "https://logicandgate.com/lalitar-cha.html",
-    "image": "https://logicandgate.com/lalitar-cha-banner.png",
-    "genre": ["Horror", "Simulation"],
-    "gamePlatform": "Android",
-    "applicationCategory": "GameApplication",
-    "operatingSystem": "Android",
-    "description": "A Bengali village horror game about running a roadside tea stall through four days, as an unsettling customer returns on Chaturdashi and Amavasya.",
-    "publisher": { "@type": "Organization", "name": "Logic & Gate", "url": "https://logicandgate.com" }
+    "@graph": [
+      {
+        "@type": "VideoGame",
+        "name": "Lalitar Cha: Last Order",
+        "alternateName": ["ললিতার চা", "Lalitar Cha", "Lalita's Tea"],
+        "url": "https://logicandgate.com/lalitar-cha.html",
+        "image": "https://logicandgate.com/lalitar-cha-banner.png",
+        "description": "A first-person Bengali village horror game for Android. The player is Montu, who runs a roadside tea stall for four days in the month of Kartik, through Bhoot Chaturdashi and the moonless night of Amavasya. In development.",
+        "genre": ["Horror", "Simulation"],
+        "gamePlatform": "Android",
+        "operatingSystem": "Android 10 or newer",
+        "applicationCategory": "GameApplication",
+        "inLanguage": ["bn", "en"],
+        "playMode": "SinglePlayer",
+        "creativeWorkStatus": "In development",
+        "author": { "@type": "Organization", "name": "Logic & Gate", "url": "https://logicandgate.com" },
+        "publisher": { "@type": "Organization", "name": "Logic & Gate", "url": "https://logicandgate.com" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is Lalitar Cha: Last Order?", "acceptedAnswer": { "@type": "Answer", "text": "A first-person Bengali village horror game for Android by Logic & Gate. You play Montu, who runs a roadside tea stall called Lalita's Tea for four days. The first two days are ordinary. The last two are Bhoot Chaturdashi and Amavasya." } },
+          { "@type": "Question", "name": "Is it out yet?", "acceptedAnswer": { "@type": "Answer", "text": "Not yet. It is in development for Android and has no release date. It is not on Google Play yet." } },
+          { "@type": "Question", "name": "What language is it in?", "acceptedAnswer": { "@type": "Answer", "text": "The voices are in Bangla, with English subtitles." } },
+          { "@type": "Question", "name": "What does the name mean?", "acceptedAnswer": { "@type": "Answer", "text": "Lalitar Cha (ললিতার চা) is Bangla for Lalita's Tea, the name of the stall. Everyone still calls it that, even though Lalita is gone." } }
+        ]
+      }
+    ]
   }
   </script>
+  <style>
+    :root {
+      --ink: #2A1506;
+      --day: #FFF6DF;
+      --tin-red: #B8141A;
+      --marigold: #F9B208;
+      --turquoise: #0B8A8F;
+      --pink: #E8356D;
+      --display: "Galada", "Nirmala UI", cursive;
+      --body: "Tiro Bangla", "Nirmala UI", Georgia, serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body { margin: 0; background: #F3A96B; color: var(--ink); font: 400 1.125rem/1.65 var(--body); overflow-x: hidden; }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-underline-offset: .18em; }
+    a:focus-visible { outline: 3px solid var(--marigold); outline-offset: 3px; border-radius: 2px; }
+    p { margin: 0 0 1em; }
+
+    /* One bar, one clock: the time moves as the page goes through the day. */
+    .bar { position: fixed; inset: 0 0 auto; z-index: 5; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .55rem max(1rem, env(safe-area-inset-right)) .55rem max(1rem, env(safe-area-inset-left)); color: var(--bar, var(--ink)); transition: color .6s; -webkit-backdrop-filter: blur(7px); backdrop-filter: blur(7px); }
+    .bar a { text-decoration: none; }
+    .bar nav { display: flex; align-items: center; gap: 1.1rem; font-size: 1rem; }
+    .bar nav a:hover { text-decoration: underline; }
+    .clock { font: 400 1.5rem/1 var(--display); min-width: 3.4em; text-align: right; }
+
+    .s { position: relative; padding: 5rem 1.25rem; }
+    .col { max-width: 40rem; margin-inline: auto; }
+    .wide { max-width: 62rem; margin-inline: auto; }
+    h2 { font: 400 clamp(2.4rem, 7vw, 4rem)/1.1 var(--display); margin: 0 0 .5em; }
+
+    /* Spoken lines: Bangla first, English under it, as in the game. */
+    .said { margin: 0 0 1.6rem; }
+    .said [lang=bn] { display: block; font-size: clamp(1.45rem, 4vw, 1.9rem); line-height: 1.5; }
+    .said span:not([lang]) { display: block; font-style: italic; font-size: 1.05rem; opacity: .85; }
+
+    .shot { margin: 2.5rem 0; }
+    .shot img { width: 100%; height: auto; border: 6px solid var(--day); box-shadow: 0 10px 0 rgba(0,0,0,.18); }
+    figcaption { font-size: .95rem; margin-top: .6rem; }
+
+    /* 06:00: dawn, and the sign */
+    .dawn { background: linear-gradient(#F3A96B, #F7C995 55%, #9BD4DC); padding-top: 5.5rem; }
+    .hang { max-width: 58rem; margin: 0 auto 3.5rem; position: relative; }
+    .hang::before, .hang::after { content: ""; position: absolute; top: -5.5rem; height: 5.6rem; width: 3px; background: #4B3524; }
+    .hang::before { left: 12%; }
+    .hang::after { right: 12%; }
+    .sign { position: relative; transform: rotate(-.8deg); padding: clamp(.9rem, 3vw, 1.6rem); background-color: var(--tin-red);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012 .09' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 .2 0 0 0 0 .04 0 0 0 0 .02 0 0 0 1.6 -.72'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+      box-shadow: 0 14px 0 rgba(58,20,6,.28); }
+    .sign-in { border: 4px solid var(--marigold); outline: 3px solid var(--day); outline-offset: -11px; padding: clamp(1rem, 4vw, 2.4rem) clamp(.6rem, 3vw, 2rem); text-align: center; position: relative; }
+    .sign h1 { margin: 0; font-weight: 400; }
+    .sign .bn { display: block; font: 400 clamp(4.2rem, 19vw, 11.5rem)/1.05 var(--display); color: var(--marigold); text-shadow: .035em .045em 0 #4F0709; }
+    .sign .en { display: block; font: 400 clamp(1.15rem, 3.8vw, 2.1rem)/1.2 var(--display); color: var(--day); margin-top: .35em; }
+    .flower { position: absolute; width: clamp(2.4rem, 8vw, 5rem); height: clamp(2.4rem, 8vw, 5rem); }
+    .flower.a { left: -.25rem; top: -.25rem; }
+    .flower.b { right: -.25rem; top: -.25rem; transform: scaleX(-1); }
+    .flower.c { left: -.25rem; bottom: -.25rem; transform: scaleY(-1); }
+    .flower.d { right: -.25rem; bottom: -.25rem; transform: scale(-1); }
+    .sum { font-size: 1.2rem; border-left: 5px solid var(--tin-red); padding-left: 1rem; }
+
+    /* 06:20: the ride */
+    .ride { background: linear-gradient(#9BD4DC, #6EC6E6); }
+
+    /* 06:30: the jobs, painted on a tin board */
+    .open { background: linear-gradient(#6EC6E6, #F7E08A 70%, #F5D56A); }
+    .board { background: var(--turquoise); color: var(--day); padding: clamp(1.3rem, 4vw, 2.4rem); border: 6px solid var(--marigold); box-shadow: 0 10px 0 rgba(0,0,0,.18); margin-bottom: 2.5rem; }
+    .board h3 { font: 400 clamp(2rem, 6vw, 3rem)/1.1 var(--display); color: var(--marigold); margin: 0 0 .7em; }
+    .board ul { list-style: none; margin: 0; padding: 0; }
+    .board li { padding: .55rem 0; border-top: 2px dashed rgba(255,246,223,.35); }
+    .board li:first-child { border-top: 0; }
+    .board b { font: 400 1.35rem/1.25 var(--display); color: #FFE27A; display: block; }
+
+    /* 19:00: dusk. The break is sky only, then the tree line, so the words stay on deep colour. */
+    .dusk { background: linear-gradient(#F5D56A, #F08A5D 11rem, #E4577E 19rem, #5B2A86 30rem, #3A1E6B); color: var(--day); padding-top: 22rem; }
+    .trees { position: absolute; left: 0; right: 0; top: 24.6rem; width: 100%; height: 6rem; max-width: none; color: #2B1450; }
+    .dusk .col { position: relative; padding-top: 9.5rem; }
+
+    /* 23:00: four days */
+    .night { background: linear-gradient(#3A1E6B, #11143F); color: var(--day); }
+    .days { display: grid; grid-template-columns: repeat(4, 1fr); gap: .6rem; list-style: none; padding: 0; margin: 2rem 0 2.6rem; }
+    .days li { background: var(--day); color: var(--ink); padding: .8rem .75rem 1rem; }
+    .days .n { display: flex; align-items: center; justify-content: space-between; font: 400 1.5rem/1 var(--display); color: var(--tin-red); margin-bottom: .6rem; }
+    .days svg { width: 1.9rem; height: 1.9rem; }
+    .days b { display: block; font-weight: 400; font-size: 1.15rem; line-height: 1.3; margin-bottom: .35rem; }
+    .days p { margin: 0; font-size: .98rem; line-height: 1.45; }
+    .days li.bad { background: #1B1E52; color: var(--day); outline: 2px solid var(--pink); outline-offset: -2px; }
+    .days li.bad .n { color: #FF7FA3; }
+
+    /* Amavasya: real black, one bulb */
+    .moonless { background: linear-gradient(#11143F, #000 10rem); color: var(--day); padding-top: 0; text-align: center; }
+    .wire { width: 2px; height: 11rem; background: #3D3D3D; margin: 0 auto; }
+    .bulb { width: 2.6rem; height: 3.2rem; margin: 0 auto; border-radius: 50% 50% 46% 46%; background: #FFE9A8; box-shadow: 0 0 34px 16px rgba(255,190,80,.55), 0 0 200px 90px rgba(255,170,60,.2); }
+    .moonless .col { padding-top: 3rem; transition: opacity .25s; }
+    .moonless h2 { color: #FFD77A; }
+    .moonless.off .bulb { background: #2A2A2A; box-shadow: none; }
+    .moonless.off .col { opacity: .05; }
+    .moonless.lit .bulb { animation: stutter 1.5s steps(1) both; }
+    @keyframes stutter { 0%,18%,34%,62% { opacity: .15; } 10%,26%,48%,72%,100% { opacity: 1; } }
+    .slip { display: inline-block; background: var(--day); color: var(--ink); text-align: left; padding: 1rem 1.3rem; transform: rotate(1.2deg); margin: 1rem 0 2rem; max-width: 24rem; }
+    .slip b { display: block; font: 400 1.8rem/1.2 var(--display); color: var(--tin-red); }
+    .slip p { margin: .3rem 0 0; font-size: 1.02rem; line-height: 1.45; }
+
+    /* Plain answers, for anyone who came to find out what this is */
+    .facts { background: #000; color: var(--day); padding-top: 2rem; }
+    .facts h2 { font-size: clamp(2rem, 5vw, 3rem); }
+    .facts h3 { font-size: 1.15rem; font-weight: 400; color: #FFD77A; margin: 1.5rem 0 .2rem; }
+    .facts p { margin: 0; }
+    .facts .go { margin-top: 2.2rem; display: flex; flex-wrap: wrap; gap: 1.2rem; }
+    .foot { background: #000; color: rgba(255,246,223,.72); padding: 1rem 1.25rem 2.5rem; font-size: .95rem; }
+    .foot .col { display: flex; flex-wrap: wrap; gap: .4rem 1.1rem; }
+
+    @media (max-width: 40rem) {
+      .days { grid-template-columns: 1fr 1fr; }
+      .bar nav .wideonly { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .bar { transition: none; }
+      .moonless .col { transition: none; }
+      .moonless.lit .bulb { animation: none; }
+    }
+  </style>
 </head>
-<body class="lalitar-page">
-  <div class="bg-space" aria-hidden="true"></div>
-  <div class="bg-noise" aria-hidden="true"></div>
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="logo" aria-label="Logic &amp; Gate home">
-        <img class="studio-logo" src="site-logo.png" alt="" width="34" height="34" aria-hidden="true">
-        <span class="logo-text"><span class="logo-name">Logic &amp; Gate</span><span class="logo-sub">game studio</span></span>
-      </a>
-      <nav class="desk-nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="dreadhush.html">Dreadhush</a>
-        <a href="duskthorn.html">Duskthorn</a>
-        <a href="lalitar-cha.html" class="active" aria-current="page">Lalitar Cha</a>
-        <a href="site-privacy.html">Privacy</a>
-        <a href="support.html">Support</a>
-        <a href="license.html">License</a>
-        <a href="company-profile.html">Company</a>
-      </nav>
-    </div>
-  </header>
-  <div class="scroll-progress" aria-hidden="true"></div>
+<body>
 
-  <section class="hero hero--game">
-    <div class="container">
-      <img class="dh-banner load-in d1" src="lalitar-cha-banner.png" alt="A village tea stall glows beside a moonlit paddy field as villagers gather after dark" width="1200" height="675">
-      <img class="lalitar-mark load-in d1" src="lalitar-cha-mark.png" alt="Lalitar Cha: Last Order game emblem" width="512" height="512">
-      <p class="hero-eyebrow load-in d2">Bengali Folk Horror &nbsp;·&nbsp; Android &nbsp;·&nbsp; In Development</p>
-      <h1 class="load-in d2">Lalitar <span class="accent accent--lalitar">Cha</span><br><span class="accent accent--lalitar">Last Order</span></h1>
-      <p class="lede load-in d3">The village comes for tea. Someone else comes after dark.</p>
-      <p class="lede load-in d3">Run a roadside tea stall through four days in a Bengali village. Keep the kettle on, serve the regulars, and ride home before the last order. The first two days feel ordinary. Then the nights begin to remember you.</p>
-      <div class="hero-cta load-in d4">
-        <a href="index.html#games" class="btn">← All games</a>
-        <a href="support.html" class="btn btn-outline">💬 Get Support</a>
-      </div>
-    </div>
-  </section>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="flower" viewBox="0 0 100 100">
+    <g transform="translate(26 26)">
+      <g fill="#E8356D"><ellipse cx="0" cy="-15" rx="8" ry="13"/><ellipse cx="0" cy="-15" rx="8" ry="13" transform="rotate(45)"/><ellipse cx="0" cy="-15" rx="8" ry="13" transform="rotate(90)"/><ellipse cx="0" cy="-15" rx="8" ry="13" transform="rotate(135)"/><ellipse cx="0" cy="-15" rx="8" ry="13" transform="rotate(180)"/><ellipse cx="0" cy="-15" rx="8" ry="13" transform="rotate(225)"/><ellipse cx="0" cy="-15" rx="8" ry="13" transform="rotate(270)"/><ellipse cx="0" cy="-15" rx="8" ry="13" transform="rotate(315)"/></g>
+      <circle r="8" fill="#F9B208"/><circle r="3.4" fill="#FFF6DF"/>
+    </g>
+    <path d="M45 18c16-6 30-4 44 2-14 4-28 6-44-2zM18 45c-6 16-4 30 2 44 4-14 6-28-2-44z" fill="#0B8A8F"/>
+  </symbol>
+</svg>
 
-  <div class="container"><div class="gold-rule">Four Days. One Last Order.</div></div>
-  <section class="features">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title">A village routine, slowly turning strange</h2>
-        <p class="section-sub">The stall is ten minutes from home. The ride back feels longer each night.</p>
-      </div>
-      <div class="feat-grid">
-        <article class="feat-card reveal"><span class="feat-icon" aria-hidden="true">☕</span><h3>Keep the Stall Running</h3><p>Open the shutter, fetch water, tend the kettle, make tea, serve snacks, and clear the cups people leave behind.</p></article>
-        <article class="feat-card reveal"><span class="feat-icon" aria-hidden="true">🚲</span><h3>A Living Village</h3><p>Ride past rice fields and familiar faces. Farmers work, traffic rolls by, and regulars stop in to talk over tea.</p></article>
-        <article class="feat-card reveal"><span class="feat-icon" aria-hidden="true">🌘</span><h3>Chaturdashi</h3><p>The customers grow fewer. One woman keeps returning. On the ride home, you see her where nobody should be.</p></article>
-        <article class="feat-card reveal"><span class="feat-icon" aria-hidden="true">🔴</span><h3>Amavasya</h3><p>The familiar customer reveals what she is. Her last order must be finished before the stall closes.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <div class="container"><div class="gold-rule">After Closing Time</div></div>
-  <section class="features">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title">Some nights stay with you</h2>
-        <p class="section-sub">A Bengali village tale told through everyday work, small mysteries, and the dread of the road home.</p>
-      </div>
-      <section class="panel reveal">
-        <h2>The Last Order</h2>
-        <p>At first, Lalitar Cha is only a tea stall: a kettle on the fire, biscuits in jars, cups on the bench, and a cycle ride home at the end of the day. Then a woman begins to visit more often than anyone else. On Chaturdashi, she is seen crying beneath a tree on the road home. By Amavasya, the village has gone quiet and the last order has become a night you must survive.</p>
-        <p><em>Lalitar Cha: Last Order</em> is in development for Android.</p>
-      </section>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-coin-scene"><img class="studio-logo studio-logo--foot" src="site-logo.png" alt="" width="40" height="40" aria-hidden="true"></div>
-      <p>© 2026 Logic &amp; Gate. All rights reserved.</p>
-      <p><a href="https://logicandgate.com" class="foot-domain" target="_blank" rel="noopener">logicandgate.com</a></p>
-      <p class="foot-links">
-        <a href="index.html">Home</a><span>|</span>
-        <a href="dreadhush.html">Dreadhush</a><span>|</span>
-        <a href="duskthorn.html">Duskthorn</a><span>|</span>
-        <a href="lalitar-cha.html">Lalitar Cha</a><span>|</span>
-        <a href="dreadhush-privacy.html">Dreadhush Privacy</a><span>|</span>
-        <a href="duskthorn-privacy.html">Duskthorn Privacy</a><span>|</span>
-        <a href="site-privacy.html">Site Privacy</a><span>|</span>
-        <a href="support.html">Support</a><span>|</span>
-        <a href="license.html">License</a><span>|</span>
-        <a href="company-profile.html">Company</a>
-      </p>
-    </div>
-  </footer>
-
-  <nav class="bottom-nav" aria-label="Site navigation">
-    <a href="index.html" class="bn-item"><span class="bn-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></span><span class="bn-label">Home</span></a>
-    <a href="dreadhush.html" class="bn-item"><span class="bn-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span><span class="bn-label">Dreadhush</span></a>
-    <a href="site-privacy.html" class="bn-item"><span class="bn-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span class="bn-label">Privacy</span></a>
-    <a href="support.html" class="bn-item"><span class="bn-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span class="bn-label">Support</span></a>
-    <a href="license.html" class="bn-item"><span class="bn-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span><span class="bn-label">License</span></a>
-    <a href="company-profile.html" class="bn-item"><span class="bn-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span><span class="bn-label">Company</span></a>
+<header class="bar" id="bar">
+  <a href="index.html" aria-label="Logic &amp; Gate home">Logic &amp; Gate</a>
+  <nav aria-label="Site">
+    <a href="index.html#games" class="wideonly">All games</a>
+    <a href="support.html" class="wideonly">Support</a>
+    <span class="clock" id="clock" lang="bn" aria-hidden="true" hidden></span>
   </nav>
+</header>
 
-  <div class="toast" role="status" aria-live="polite"></div>
-  <button class="back-to-top" aria-label="Back to top">↑</button>
-  <script src="script.js"></script>
+<main>
+
+  <section class="s dawn" data-time="06:00" data-bar="#2A1506">
+    <div class="hang">
+      <div class="sign">
+        <div class="sign-in">
+          <svg class="flower a"><use href="#flower"/></svg><svg class="flower b"><use href="#flower"/></svg>
+          <svg class="flower c"><use href="#flower"/></svg><svg class="flower d"><use href="#flower"/></svg>
+          <h1><span class="bn" lang="bn">ললিতার চা</span><span class="en">Lalitar Cha: Last Order</span></h1>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <p class="said"><span lang="bn">সবাই খালি জিজ্ঞেস করে, আমি এখন আর চা খাই না কেন।</span><span>They always ask me why I don't drink tea anymore.</span></p>
+      <p class="said"><span lang="bn">একসময় আমার একটা চায়ের দোকান ছিল। এমন এক গ্রামে, যেখানে রাস্তা গিয়ে শেষ হয় ধানক্ষেতে।</span><span>I had a tea stall once. In a village where the road ends at the rice fields.</span></p>
+      <p class="said"><span lang="bn">সবাই ওটাকে বলত "ললিতার চা"। ললিতা চলে যাওয়ার পরেও।</span><span>Everyone called it Lalita's Tea. Even after Lalita was gone.</span></p>
+      <p class="sum">A first-person Bengali village horror game for Android, in development at Logic &amp; Gate. You are Montu. You run this stall for four days, and the last two nights are the wrong nights to be out.</p>
+    </div>
+  </section>
+
+  <section class="s ride" data-time="06:20" data-bar="#2A1506">
+    <div class="wide">
+      <h2>Ride to the stall</h2>
+      <div class="col" style="margin-inline:0">
+        <p>Cycle from your house along the rice fields. Ten minutes on the clock, about one minute in your hands. Farmers are already out, and the autos and rickshaws on the highway will not wait for you.</p>
+      </div>
+      <figure class="shot">
+        <img src="lalitar-shot-ride.jpg" alt="First-person view of a straight village road through flooded rice fields at dawn, with electric poles and a distant tree line" width="1400" height="630" loading="lazy">
+        <figcaption>From the game, still in development.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="s open" data-time="06:30" data-bar="#2A1506">
+    <div class="wide">
+      <div class="board">
+        <h3>Today's work</h3>
+        <ul>
+          <li><b>Open up</b> Unlock the padlock, lift the shutter, switch on the bulb.</li>
+          <li><b>Fetch water</b> The tubewell is broken. Carry it from the pond behind the stall, about three times a day.</li>
+          <li><b>Make the tea</b> Fill the kettle, add the leaves, light the stove, pour. Sugar by the spoon, milk or ginger if they ask.</li>
+          <li><b>Serve the village</b> Tea, biscuits from the jars, chips off the string, and a mobile recharge for anyone whose balance ran out.</li>
+          <li><b>Clean up</b> Collect the glasses people leave on the bench and wash them in the tub.</li>
+          <li><b>Go home</b> Hang up your keys, charge your phone, cook your dinner, turn off the gas. Tomorrow you do it again.</li>
+        </ul>
+      </div>
+      <figure class="shot">
+        <img src="lalitar-shot-tea.jpg" alt="A steel kettle pouring tea into a glass on the stall's counter, beside jars with red lids and a gas stove" width="1400" height="644" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <section class="s dusk" data-time="19:00" data-bar="#FFF6DF">
+    <svg class="trees" viewBox="0 0 1032 90" preserveAspectRatio="none" fill="currentColor" aria-hidden="true">
+      <path d="M0 90V62c30-16 58-16 84 0 18-22 54-24 74-2 22-14 48-12 70 4 26-24 62-22 84 2 26-12 50-10 72 6 18-14 44-14 60 2l10-30 4 30c26-18 60-18 86 2 22-20 58-20 80 2 18-10 42-10 60 4l8-34 4 34c28-16 56-16 80 0 24-22 60-20 84 4 20-10 44-10 64 2 22-14 44-12 66 2 16-8 30-8 46 0V90z"/>
+      <path d="M512 34l-22 8 22-14-18-8 22 8 4-14 4 14 22-8-18 8 22 14-22-8zM786 26l-22 8 22-14-18-8 22 8 4-14 4 14 22-8-18 8 22 14-22-8zM514 28h3v44h-3zM788 20h3v50h-3zM240 40l-14 6 14-10-12-5 14 5 3-10 3 10 14-5-12 5 14 10-14-6zM241 36h3v30h-3z"/>
+    </svg>
+    <div class="col">
+      <h2>The evening rush</h2>
+      <p class="said"><span lang="bn">খুব সস্তায় পেয়েছিলাম। আর কেউ নিতে চায়নি। ভেবেছিলাম, আমার কপাল ভালো।</span><span>I got it cheap. Nobody else wanted it. I thought I was the lucky one.</span></p>
+      <p>After dark the benches fill up. Ten villagers, all voiced in Bangla with English subtitles: some funny, some nosy, some too tired to talk. They drink your tea and they talk over it. Listen long enough and you'll hear why this stall was going cheap, and why nobody likes the pond.</p>
+      <figure class="shot">
+        <img src="lalitar-shot-dusk.jpg" alt="Rice fields at dusk with one round tree against the last light on the horizon and stars coming out" width="1400" height="630" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <section class="s night" data-time="22:30" data-bar="#FFF6DF">
+    <div class="wide">
+      <h2>Four days in Kartik</h2>
+      <p class="said"><span lang="bn">তখন কার্তিক মাস। প্রতি রাতে চাঁদটা একটু একটু করে সরু হয়ে আসছিল।</span><span>It was the month of Kartik. Every night the moon grew a little thinner.</span></p>
+      <ol class="days">
+        <li>
+          <div class="n"><span>Day 1</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 1-.01 20A15 15 0 0 0 12 2z" fill="#E3B000"/></svg></div>
+          <b>An ordinary day</b><p>Learn the stall. Learn the road home.</p>
+        </li>
+        <li>
+          <div class="n"><span>Day 2</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 1-.01 20A10 10 0 0 0 12 2z" fill="#E3B000"/></svg></div>
+          <b>Nearly ordinary</b><p>Small things. Easy to explain away.</p>
+        </li>
+        <li class="bad">
+          <div class="n"><span>Day 3</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2a10 10 0 1 1-.01 20A13 13 0 0 0 13 2z" fill="#FFE27A" transform="translate(2)"/></svg></div>
+          <b><span lang="bn">ভূত চতুর্দশী</span><br>Bhoot Chaturdashi</b><p>Fewer customers, and one new one who keeps coming back. Later, someone crying under a tree on your way home.</p>
+        </li>
+        <li class="bad">
+          <div class="n"><span>Day 4</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#FF7FA3" stroke-width="1" stroke-dasharray="2 3"/></svg></div>
+          <b><span lang="bn">অমাবস্যা</span><br>Amavasya</b><p>No moon. The village goes in early. You still have to open the stall.</p>
+        </li>
+      </ol>
+      <div class="col" style="margin-inline:0">
+        <p>In Bengal they say the fourteenth night of the dark fortnight is when the dead come closest, and that on the moonless night after it you stay away from water and big trees.</p>
+        <p>They say a <em>petni</em> is the ghost of a woman who died with a wish unfinished. White sari, open hair, a voice that comes through her nose, feet turned backwards. And she can wear an ordinary face.</p>
+        <p>Your water comes from a pond. Three times a day.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="s moonless" id="moonless" data-time="22:59" data-bar="#FFF6DF">
+    <div class="wire" aria-hidden="true"></div>
+    <div class="bulb" aria-hidden="true"></div>
+    <div class="col">
+      <h2>The last order</h2>
+      <p class="said"><span lang="bn">কিছু খদ্দের আছে... যারা কখনো আসা বন্ধ করে না।</span><span>Some customers... never stop coming back.</span></p>
+      <div class="slip">
+        <b>One glass of tea</b>
+        <p>Made exactly the way she wants it, before the stall closes at 23:00.</p>
+      </div>
+      <p>You get one chance. If you fail, she kills you, the run is over and Continue is gone from the menu.</p>
+    </div>
+  </section>
+
+  <section class="s facts" data-time="22:59" data-bar="#FFF6DF">
+    <div class="col">
+      <h2>What is Lalitar Cha: Last Order?</h2>
+      <p>A first-person Bengali village horror game for Android, made by Logic &amp; Gate. You play Montu, who runs a roadside tea stall called Lalita's Tea for four days. The first two days are ordinary. The last two are Bhoot Chaturdashi and Amavasya.</p>
+      <h3>Is it out yet?</h3>
+      <p>Not yet. It is in development for Android and has no release date. It is not on Google Play yet.</p>
+      <h3>What language is it in?</h3>
+      <p>The voices are in Bangla, with English subtitles.</p>
+      <h3>What does the name mean?</h3>
+      <p>Lalitar Cha (<span lang="bn">ললিতার চা</span>) is Bangla for Lalita's Tea, the name of the stall. Everyone still calls it that, even though Lalita is gone.</p>
+      <h3>Which phones will it run on?</h3>
+      <p>Android 10 or newer.</p>
+      <p class="go"><a href="index.html#games">See all our games</a><a href="support.html">Contact support</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="col">
+    <span>© 2026<span id="year"></span> Logic &amp; Gate. All rights reserved.</span>
+    <a href="index.html">Home</a>
+    <a href="dreadhush.html">Dreadhush</a>
+    <a href="duskthorn.html">Duskthorn</a>
+    <a href="site-privacy.html">Privacy</a>
+    <a href="license.html">License</a>
+    <a href="company-profile.html">Company</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var year = new Date().getFullYear();
+  if (year > 2026) document.getElementById("year").textContent = "–" + year;
+
+  var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var bar = document.getElementById("bar"), clock = document.getElementById("clock");
+  var digits = "০১২৩৪৫৬৭৮৯";
+  function bangla(s) { return s.replace(/\d/g, function (d) { return digits[+d]; }); }
+  function mins(t) { var p = t.split(":"); return +p[0] * 60 + +p[1]; }
+  function show(m) {
+    var h = Math.floor(m / 60), n = Math.round(m % 60);
+    if (n === 60) { h++; n = 0; }
+    clock.textContent = bangla((h < 10 ? "0" : "") + h + ":" + (n < 10 ? "0" : "") + n);
+  }
+  var now = mins("06:00"), raf = 0;
+  clock.hidden = false;
+  show(now);
+
+  function runTo(target) {
+    cancelAnimationFrame(raf);
+    if (still) { now = target; show(now); return; }
+    var from = now, start = performance.now();
+    (function step(t) {
+      var k = Math.min(1, (t - start) / 700);
+      now = from + (target - from) * k;
+      show(now);
+      if (k < 1) raf = requestAnimationFrame(step);
+    })(start);
+  }
+
+  // The section under the bar sets the clock and the bar's ink.
+  var seen = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      bar.style.setProperty("--bar", e.target.dataset.bar);
+      runTo(mins(e.target.dataset.time));
+    });
+  }, { rootMargin: "-48px 0px -92% 0px" });
+  document.querySelectorAll("[data-time]").forEach(function (s) { seen.observe(s); });
+
+  // Amavasya: dark until you reach it, then the bulb stutters on, once.
+  if (still) return;
+  var dark = document.getElementById("moonless");
+  dark.classList.add("off");
+  var bulb = new IntersectionObserver(function (entries) {
+    if (!entries[0].isIntersecting) return;
+    bulb.disconnect();
+    setTimeout(function () { dark.classList.remove("off"); dark.classList.add("lit"); }, 500);
+  }, { threshold: 0.2 });
+  bulb.observe(dark);
+})();
+</script>
 </body>
 </html>
