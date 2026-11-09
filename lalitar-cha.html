@@ -51,7 +51,7 @@
           { "@type": "Question", "name": "Is it free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, with ads. You only see one after a death: if you choose to watch it and carry on, or when you give up. An optional one-time purchase removes them for good." } },
           { "@type": "Question", "name": "What language is it in?", "acceptedAnswer": { "@type": "Answer", "text": "The voices are in Bangla, with English subtitles." } },
           { "@type": "Question", "name": "What does the name mean?", "acceptedAnswer": { "@type": "Answer", "text": "Lalitar Cha (ললিতার চা) is Bangla for Lalita's Tea, the name of the stall. Everyone still calls it that, even though Lalita is gone." } },
-          { "@type": "Question", "name": "Which phones will it run on?", "acceptedAnswer": { "@type": "Answer", "text": "Android 10 or newer." } }
+          { "@type": "Question", "name": "Which phones will it run on?", "acceptedAnswer": { "@type": "Answer", "text": "Android 10 or newer. The full requirements are above." } }
         ]
       }
     ]
@@ -142,6 +142,13 @@
     blockquote .en { color: var(--dim); margin-top: .35rem; }
     cite { display: block; margin-top: .4rem; font-style: normal; font-weight: 500; color: #A5C8B5; }
 
+    .req-note { color: var(--dim); max-width: 44rem; margin: 0 auto; }
+    .req { display: grid; grid-template-columns: 1fr 1fr; gap: 2.4rem 3rem; margin-top: 1.8rem; text-align: left; }
+    .req h3 { font: 400 1.6rem/1.2 var(--sign); color: #EAF5DF; margin: 0 0 .6rem; }
+    .req dl { display: grid; grid-template-columns: auto 1fr; gap: .3rem 1.3rem; margin: 0; }
+    .req dt { color: var(--dim); }
+    .req dd { margin: 0; color: var(--mint); }
+
     .facts h3 { font-size: 1.15rem; font-weight: 600; color: #EAF5DF; margin: 1.5rem 0 .1rem; }
     .facts p { color: var(--dim); }
     .join { display: inline-block; margin-top: 1rem; padding: .55rem 1.5rem .45rem; border-radius: 4px; background: #5F9A8E; color: var(--ground); font-weight: 600; text-decoration: none; }
@@ -163,6 +170,7 @@
       .grid { grid-template-columns: 1fr 1fr; gap: .7rem; }
       .days { grid-template-columns: 1fr 1fr; }
       .quotes { grid-template-columns: 1fr; }
+      .req { grid-template-columns: 1fr; }
     }
     @media (prefers-reduced-motion: reduce) {
       .bird, .bird path, .wick, .steam path { animation: none; }
@@ -294,6 +302,37 @@
     </div>
   </section>
 
+  <section class="wide">
+    <h2>Will it run on my phone?</h2>
+    <p class="req-note">Recommended is the phone we test on: 60 frames a second on High graphics. Minimum is what the game is built to install and start on, and we haven't tried every device.</p>
+    <div class="req">
+      <div>
+        <h3>Minimum</h3>
+        <dl>
+          <dt>Android</dt><dd>Android 10 or newer</dd>
+          <dt>Processor</dt><dd>64-bit or 32-bit ARM</dd>
+          <dt>Graphics</dt><dd>OpenGL ES 3.0 or Vulkan</dd>
+          <dt>Memory</dt><dd>3 GB RAM</dd>
+          <dt>Free storage</dt><dd>300 MB</dd>
+          <dt>Frame rate</dt><dd>30 FPS on Low graphics</dd>
+          <dt>Internet</dt><dd>Needed to start, unless you own Remove Ads</dd>
+        </dl>
+      </div>
+      <div>
+        <h3>Recommended</h3>
+        <dl>
+          <dt>Android</dt><dd>Android 16</dd>
+          <dt>Processor</dt><dd>MediaTek Helio G99 or better</dd>
+          <dt>Graphics</dt><dd>Mali-G57 or better, Vulkan</dd>
+          <dt>Memory</dt><dd>8 GB RAM</dd>
+          <dt>Free storage</dt><dd>300 MB</dd>
+          <dt>Frame rate</dt><dd>60 FPS on High graphics</dd>
+          <dt>Internet</dt><dd>Stable Wi-Fi or mobile data</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
   <section class="wide col facts">
     <h2>What is Lalitar Cha: Last Order?</h2>
     <p>A first-person Bengali village horror game for Android, made by Logic &amp; Gate. You play Montu, who runs a roadside tea stall called Lalita's Tea for four days. The first two days are ordinary. The last two are Bhoot Chaturdashi and Amavasya.</p>
@@ -306,7 +345,7 @@
       <h3>What does the name mean?</h3>
       <p>Lalitar Cha (<span lang="bn">ললিতার চা</span>) is Bangla for Lalita's Tea, the name of the stall. Everyone still calls it that, even though Lalita is gone.</p>
       <h3>Which phones will it run on?</h3>
-      <p>Android 10 or newer.</p>
+      <p>Android 10 or newer. The full requirements are above.</p>
     <a class="join" href="https://discord.gg/cj6GHqWSgw" rel="noopener">Get news on Discord</a>
   </section>
 </main>
