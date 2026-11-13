@@ -1,6 +1,6 @@
 # Logic & Gate
 
-> Logic & Gate is an independent video game studio from Bangladesh that designs, builds and publishes games for Android. It is a sole proprietorship founded on 16 April 2026 by Solayman Islam Ruman (Founder & CEO). Its horror games Dreadhush and Duskthorn are out now on Google Play. Its next game, Lalitar Cha: Last Order (ললিতার চা), is in development.
+> Logic & Gate is an independent video game studio from Bangladesh that designs, builds and publishes games for Android. It is a sole proprietorship founded on 16 April 2026 by Solayman Islam Ruman (Founder & CEO). Its horror games Dreadhush, Duskthorn and Lalitar Cha: Last Order (ললিতার চা) are out now on Google Play.
 
 - Legal name: Logic & Gate (sole proprietorship)
 - Registered address: South Bhitabaria, Bhandaria, Pirojpur, Barisal Division 8550, Bangladesh
@@ -29,7 +29,7 @@
 
 - [Dreadhush: House of Silence](https://logicandgate.com/dreadhush.html): first-person survival horror for Android, out now on [Google Play](https://play.google.com/store/apps/details?id=com.logicandgate.dreadhushproject)
 - [Duskthorn: The Asylum](https://logicandgate.com/duskthorn.html): first-person horror for Android, out now on Google Play (https://play.google.com/store/apps/details?id=com.logicandgate.duskthorn)
-- [Lalitar Cha: Last Order](https://logicandgate.com/lalitar-cha.html): first-person Bengali village horror game for Android, in development (details below)
+- [Lalitar Cha: Last Order](https://logicandgate.com/lalitar-cha.html): first-person Bengali village horror game for Android, out now on [Google Play](https://play.google.com/store/apps/details?id=com.logicandgate.lastorder) (details below)
 - [Tanzanite Mining](https://logicandgate.com/tm.html): casual mobile mining simulation for Android, on [Google Play](https://play.google.com/store/apps/details?id=com.logicandget.tanzanitemining)
 - [Znite Run](https://logicandgate.com/znite.html): endless runner game for Android, on [Google Play](https://play.google.com/store/apps/details?id=com.logicandgate.zniterun)
 
@@ -38,7 +38,7 @@
 Also written Lalitar Cha, ললিতার চা, or Lalita's Tea. Page: https://logicandgate.com/lalitar-cha.html
 
 - What it is: a first-person Bengali village horror game for Android, made by Logic & Gate, a game studio from Bangladesh
-- Status: in development. No release date yet, and not on Google Play yet
+- Status: out now on Google Play (https://play.google.com/store/apps/details?id=com.logicandgate.lastorder). Free with ads; a one-time purchase removes them
 - Language: Bangla voices with English subtitles
 - Platform: Android 10 or newer
 - Premise: you play Montu, who runs a roadside tea stall called Lalita's Tea for four days in a Bengali village, in the month of Kartik
