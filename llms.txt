@@ -19,6 +19,8 @@
 - [Dreadhush Data Deletion](https://logicandgate.com/dreadhush-delete-data.html): how to delete Dreadhush data
 - [Duskthorn Privacy Policy](https://logicandgate.com/duskthorn-privacy.html): privacy policy for the Duskthorn: The Asylum Android game
 - [Duskthorn Data Deletion](https://logicandgate.com/duskthorn-delete-data.html): how to delete Duskthorn data
+- [Floodbound Privacy Policy](https://logicandgate.com/floodbound-privacy.html): privacy policy for the Floodbound Android game
+- [Floodbound Account Deletion](https://logicandgate.com/floodbound-delete-account.html): how to delete a Floodbound account and its data
 - [Tanzanite Mining Terms and Conditions](https://logicandgate.com/tm-terms.html): terms for the Tanzanite Mining Android game
 - [Znite Run Terms and Conditions](https://logicandgate.com/znite-terms.html): terms for the Znite Run Android game
 - [Game Terms of Service](https://logicandgate.com/game-terms.html): terms for playing Duskthorn: The Asylum and Dreadhush: House of Silence
@@ -30,6 +32,7 @@
 - [Dreadhush: House of Silence](https://logicandgate.com/dreadhush.html): first-person survival horror for Android, out now on [Google Play](https://play.google.com/store/apps/details?id=com.logicandgate.dreadhushproject)
 - [Duskthorn: The Asylum](https://logicandgate.com/duskthorn.html): first-person horror for Android, out now on Google Play (https://play.google.com/store/apps/details?id=com.logicandgate.duskthorn)
 - [Lalitar Cha: Last Order](https://logicandgate.com/lalitar-cha.html): first-person Bengali village horror game for Android, out now on [Google Play](https://play.google.com/store/apps/details?id=com.logicandgate.lastorder) (details below)
+- [Floodbound](https://logicandgate.com/floodbound.html): first-person survival game for Android, in development (not on Google Play yet). Wake on a broken raft in a flooded world, gather, craft, build a raft and a home, and follow a broken radio signal across a drowned archipelago
 - [Tanzanite Mining](https://logicandgate.com/tm.html): casual mobile mining simulation for Android, on [Google Play](https://play.google.com/store/apps/details?id=com.logicandget.tanzanitemining)
 - [Znite Run](https://logicandgate.com/znite.html): endless runner game for Android, on [Google Play](https://play.google.com/store/apps/details?id=com.logicandgate.zniterun)
 
