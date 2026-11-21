@@ -33,6 +33,7 @@
 - [Duskthorn: The Asylum](https://logicandgate.com/duskthorn.html): first-person horror for Android, out now on Google Play (https://play.google.com/store/apps/details?id=com.logicandgate.duskthorn)
 - [Lalitar Cha: Last Order](https://logicandgate.com/lalitar-cha.html): first-person Bengali village horror game for Android, out now on [Google Play](https://play.google.com/store/apps/details?id=com.logicandgate.lastorder) (details below)
 - [Floodbound](https://logicandgate.com/floodbound.html): first-person survival game for Android, in development (not on Google Play yet). Wake on a broken raft in a flooded world, gather, craft, build a raft and a home, and follow a broken radio signal across a drowned archipelago
+- [The Last Platform](https://logicandgate.com/lastplatform.html): side-scrolling pixel-art mystery adventure for Android, in development (not on Google Play yet). Work the night shift at Morrow Station, take passengers' impossible tickets, keep a journal of what you find, and discover why the 23:58 keeps coming back. Privacy policy: https://logicandgate.com/lastplatform-privacy.html
 - [Tanzanite Mining](https://logicandgate.com/tm.html): casual mobile mining simulation for Android, on [Google Play](https://play.google.com/store/apps/details?id=com.logicandget.tanzanitemining)
 - [Znite Run](https://logicandgate.com/znite.html): endless runner game for Android, on [Google Play](https://play.google.com/store/apps/details?id=com.logicandgate.zniterun)
 
