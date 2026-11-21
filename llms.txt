@@ -21,6 +21,9 @@
 - [Duskthorn Data Deletion](https://logicandgate.com/duskthorn-delete-data.html): how to delete Duskthorn data
 - [Floodbound Privacy Policy](https://logicandgate.com/floodbound-privacy.html): privacy policy for the Floodbound Android game
 - [Floodbound Account Deletion](https://logicandgate.com/floodbound-delete-account.html): how to delete a Floodbound account and its data
+- [The Last Platform Privacy Policy](https://logicandgate.com/lastplatform-privacy.html): privacy policy for The Last Platform Android game; no account, free play uses Google AdMob and needs internet, and the one-time Remove Ads purchase allows offline play
+- [The Last Platform Terms and Conditions](https://logicandgate.com/lastplatform-terms.html): licence, ads, internet, the one-time Remove Ads purchase, Google Play payments, refunds and saved progress
+- [The Last Platform Data Deletion](https://logicandgate.com/lastplatform-delete-data.html): how to delete the local save, settings and ad choice; what remains with Google Play and AdMob
 - [Tanzanite Mining Terms and Conditions](https://logicandgate.com/tm-terms.html): terms for the Tanzanite Mining Android game
 - [Znite Run Terms and Conditions](https://logicandgate.com/znite-terms.html): terms for the Znite Run Android game
 - [Game Terms of Service](https://logicandgate.com/game-terms.html): terms for playing Duskthorn: The Asylum and Dreadhush: House of Silence
@@ -33,7 +36,7 @@
 - [Duskthorn: The Asylum](https://logicandgate.com/duskthorn.html): first-person horror for Android, out now on Google Play (https://play.google.com/store/apps/details?id=com.logicandgate.duskthorn)
 - [Lalitar Cha: Last Order](https://logicandgate.com/lalitar-cha.html): first-person Bengali village horror game for Android, out now on [Google Play](https://play.google.com/store/apps/details?id=com.logicandgate.lastorder) (details below)
 - [Floodbound](https://logicandgate.com/floodbound.html): first-person survival game for Android, in development (not on Google Play yet). Wake on a broken raft in a flooded world, gather, craft, build a raft and a home, and follow a broken radio signal across a drowned archipelago
-- [The Last Platform](https://logicandgate.com/lastplatform.html): side-scrolling pixel-art mystery adventure for Android, in development (not on Google Play yet). Work the night shift at Morrow Station, take passengers' impossible tickets, keep a journal of what you find, and discover why the 23:58 keeps coming back. Privacy policy: https://logicandgate.com/lastplatform-privacy.html
+- [The Last Platform](https://logicandgate.com/lastplatform.html): side-scrolling pixel-art mystery adventure for Android, in development (not on Google Play yet). Work the night shift at Morrow Station, take passengers' impossible tickets, keep a journal of what you find, and discover why the 23:58 keeps coming back. Free with Google AdMob ads and an internet connection; a one-time Remove Ads purchase removes ads and unlocks offline play. Targets 32-bit and 64-bit ARM. Privacy policy: https://logicandgate.com/lastplatform-privacy.html. Terms: https://logicandgate.com/lastplatform-terms.html. Data deletion: https://logicandgate.com/lastplatform-delete-data.html
 - [Tanzanite Mining](https://logicandgate.com/tm.html): casual mobile mining simulation for Android, on [Google Play](https://play.google.com/store/apps/details?id=com.logicandget.tanzanitemining)
 - [Znite Run](https://logicandgate.com/znite.html): endless runner game for Android, on [Google Play](https://play.google.com/store/apps/details?id=com.logicandgate.zniterun)
 
