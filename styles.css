@@ -1618,3 +1618,17 @@ body.tz-leaving::before {
 .legal li { margin-bottom: 8px; }
 .toc { padding-left: 22px; columns: 2; column-gap: 32px; }
 @media (max-width: 600px) { .toc { columns: 1; } }
+
+/* Game trailers: YouTube (privacy-enhanced) under the hero, same width as the banner */
+.trailer-section { padding: 0 0 8px; }
+.trailer {
+  position: relative;
+  max-width: 880px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
+}
+.trailer iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
