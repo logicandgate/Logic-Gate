@@ -1,43 +1,58 @@
-# Simple workflow for deploying static content to GitHub Pages
+# Deploys the site to GitHub Pages on every push to main.
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# One deployment at a time; never cancel one that is running.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # Upload and deploy are separate jobs on purpose. In one job the deploy step asks
+  # for the artifact a split second after the upload, and GitHub's artifact list often
+  # doesn't show it yet ("No artifacts named github-pages were found", actions/deploy-pages#451).
+  # A separate job also makes "Re-run failed jobs" work: it re-runs only the deploy,
+  # instead of uploading a second github-pages artifact.
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
-          # Upload entire repository
           path: '.'
-        - name: Deploy to GitHub Pages
+          # Keeps .well-known/assetlinks.json (Android app links) and .nojekyll.
+          include-hidden-files: true
+
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url || steps.retry.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
+        continue-on-error: true
+      # ponytail: one retry after a pause covers GitHub's slow artifact listing and
+      # its "Deployment failed, try again later"; if both fail, re-run the failed job.
+      - name: Wait before retrying
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 30
+      - name: Deploy to GitHub Pages (retry)
+        id: retry
+        if: steps.deployment.outcome == 'failure'
+        uses: actions/deploy-pages@v5
